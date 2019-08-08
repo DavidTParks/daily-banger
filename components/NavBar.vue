@@ -31,7 +31,7 @@ export default {
   position: sticky;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 3px hsla(0, 0%, 0%, .1);
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, .2);
 
   .logo {
     height: 40px;
@@ -67,7 +67,6 @@ export default {
       align-items: center;
 
       &:hover {
-        color: $primary-200;
 
         .logo {
           g {
