@@ -25,7 +25,7 @@ export default {
           title: "Get Free",
           artist: "Diplo ft. Major Lazer",
           link: "http://www.youtube.com",
-          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoCYSMpnlhbewtGZ-57lnnh0oKyz4m0COmW1eI_HVgyKd36KctxA"
+          img: "https://prettymuchamazing.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_620/MTMwMTU4MTAzNzA1NDU3OTM4/major-lazer.webp"
         },
       ]
     }

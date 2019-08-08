@@ -5,17 +5,20 @@
         <img :src="banger.img"/>
       </div>
       <div class="banger-card__body">
-        <h1>{{banger.title}}</h1>
+        <h1 class="title">{{banger.title}}</h1>
+        <h3 class="artist">{{banger.artist}}</h3>
+        <IconPlay class="play-icon"></IconPlay>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import IconPlay from '~/assets/svg/icon-play.svg';
 export default {
   name: 'banger-list',
   components: {
-
+    IconPlay
   },
   props: ['bangers'],
   data() {
@@ -36,11 +39,14 @@ export default {
   .banger-card {
     height: 400px;
     width: 400px;
-    background: $gray-900;
+    background: white;
     border-radius: $border-radius;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .15), 0 3px 6px rgba(0, 0, 0, .1);
 
     &__header {
       img {
+        filter: brightness(.7);
+        max-height: 200px;
         object-fit: cover;
         width: 100%;
         height: 100%;
@@ -51,6 +57,29 @@ export default {
 
     .banger-card__body {
       padding: $standard-padding;
+
+      .title {
+        margin-top: 10px;
+        color: $gray-500;
+        margin-bottom: 0 !important;
+      }
+
+      .artist {
+        margin-top: 0 !important;
+        color: $gray-100;
+      }
+
+      .play-icon {
+        height: 70px;
+
+        .primary {
+          fill: $primary;
+        }
+
+        .secondary {
+          fill: white;
+        }
+      }
     }
   }
 }

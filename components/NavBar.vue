@@ -31,7 +31,7 @@ export default {
   position: sticky;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 3px hsla(0, 0%, 0%, .2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
 
   .logo {
     height: 40px;
@@ -56,6 +56,7 @@ export default {
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding-left: 0 !important;
     
     .navbar-item {
       font-size: $header-font-size;
