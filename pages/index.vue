@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Test</h1>
+    <NavBar></NavBar>
   </div>
 </template>
 
@@ -19,23 +19,4 @@ export default {
 </script>
 
 <style lang="scss">
-
-.announcement {
-.heroicon-outline {
-  fill: #626262; 
-}
-
-.heroicon-component-fill {
-  fill: white; 
-}
-
-.heroicon-component-accent {
-  fill: #7ACFC0; 
-}
-
-.heroicon-shadows {
-  fill: #626262;
-  opacity: .4; 
-}
-}
 </style>

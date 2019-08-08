@@ -1,16 +1,87 @@
 <template>
-  <h1>Navbar</h1>
+  <div class="navbar">
+    <ul class="navbar-items">
+      <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
+      <li class="navbar-item"><LightningBolt class="logo"/>The Daily Banger</li>
+    </ul>
+  </div>
 </template>
 
 <script>
+import LaunchIcon from '~/assets/svg/icon-launch.svg';
+import LightningBolt from '~/assets/svg/lightning.svg';
 export default {
   name: 'nav-bar',
+  components: {
+    LaunchIcon,
+    LightningBolt
+  },
   mounted: function() {
     console.log("Mounted");
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "~/assets/sass/variables.scss";
+.navbar {
+  width: 100vw;
+  background: $primary-dark;
+  max-height: 80px;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, .1);
 
+  .logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+
+    g {
+      :first-child {
+        fill: $secondary-dark;
+      }
+
+      :last-child {
+        fill: $secondary-100;
+      }
+    }
+  }
+
+  .navbar-items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    .navbar-item {
+      font-size: $header-font-size;
+      font-weight: 600;
+      color: white;
+      // text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: $primary-200;
+
+        .logo {
+          g {
+            :first-child {
+              fill: $secondary-100;
+            }
+
+            :last-child {
+              fill: $secondary-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

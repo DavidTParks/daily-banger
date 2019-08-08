@@ -8,13 +8,14 @@ body {
   background: $background-color;
   font-family: 'Roboto', sans-serif;
   font-weight: $base-font-weight;
+  margin: 0 !important;
 }
 
 .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
 }
