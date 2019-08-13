@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import NavBar from '~/components/NavBar.vue'
-import BangerList from '~/components/BangerList.vue';
-import Announcement from '~/assets/svg/heroicon-announcement-sm.svg'
+import Logo from "~/components/Logo.vue";
+import NavBar from "~/components/NavBar.vue";
+import BangerList from "~/components/BangerList.vue";
+import Announcement from "~/assets/svg/heroicon-announcement-sm.svg";
 
 export default {
   components: {
@@ -25,12 +25,22 @@ export default {
           title: "Get Free",
           artist: "Diplo ft. Major Lazer",
           link: "http://www.youtube.com",
-          img: "https://prettymuchamazing.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_620/MTMwMTU4MTAzNzA1NDU3OTM4/major-lazer.webp"
+          posted: "August 12, 2019",
+          img:
+            "https://prettymuchamazing.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_620/MTMwMTU4MTAzNzA1NDU3OTM4/major-lazer.webp"
         },
+        {
+          title: "Deadmau5",
+          artist: "The Veldt",
+          link: "https://www.youtube.com/watch?v=_esYONwdKuw",
+          posted: "August 11, 2019",
+          img:
+            "https://www.billboard.com/files/styles/article_main_image/public/media/deadmau5-2016-billboard-1548.jpg"
+        }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
