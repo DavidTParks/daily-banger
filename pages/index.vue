@@ -1,24 +1,7 @@
 <template>
   <div class="container">
     <NavBar></NavBar>
-    <div class="daily-banger-hero">
-      <div class="banger-hero-card" :key="1">
-        <div class="banger-card__header">
-          <img :src="bangers[0].img">
-          <div class="date-pill">
-            <span>{{bangers[0].posted}}</span>
-          </div>
-        </div>
-        <div class="banger-card__body">
-          <h1 class="title">{{bangers[0].title}}</h1>
-          <h3 class="artist">{{bangers[0].artist}}</h3>
-          <!-- <div class="play-source-row"> -->
-
-          <IconPlay class="play-icon"></IconPlay>
-        </div>
-      </div>
-    </div>
-    <BangerList :bangers="bangers.slice(1)"></BangerList>
+    <BangerList class="animated fadeIn faster" :bangers="bangers"></BangerList>
   </div>
 </template>
 
@@ -43,6 +26,7 @@ export default {
           artist: "Diplo ft. Major Lazer",
           link: "http://www.youtube.com",
           posted: "August 12, 2019",
+          genre: "Electronic",
           img:
             "https://prettymuchamazing.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_620/MTMwMTU4MTAzNzA1NDU3OTM4/major-lazer.webp"
         },
@@ -50,6 +34,7 @@ export default {
           title: "Deadmau5",
           artist: "The Veldt",
           link: "https://www.youtube.com/watch?v=_esYONwdKuw",
+          genre: "Trance",
           posted: "August 11, 2019",
           img:
             "https://www.billboard.com/files/styles/article_main_image/public/media/deadmau5-2016-billboard-1548.jpg"
@@ -59,6 +44,7 @@ export default {
           artist: "Smoke & Retribution",
           link: "https://www.youtube.com/watch?v=4fAzM5cI5FM",
           posted: "August 10, 2019",
+          genre: "Electronic",
           img: "https://i1.sndcdn.com/artworks-000144960640-uux2wb-t500x500.jpg"
         }
       ]
@@ -139,5 +125,17 @@ export default {
       }
     }
   }
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>

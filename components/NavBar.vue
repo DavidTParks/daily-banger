@@ -4,7 +4,8 @@
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
       <li class="navbar-item"></li>
       <li class="navbar-item">
-        <LightningBolt class="logo"/>The Daily Banger
+        <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/><span class="site-title">The Daily Banger</span>
+        <!-- <DailyBangerLogo class="logo"/> -->
       </li>
       <li class="hamburger-menu">
         <IconMenu/>
@@ -15,13 +16,13 @@
 
 <script>
 import LaunchIcon from "~/assets/svg/icon-launch.svg";
-import LightningBolt from "~/assets/svg/lightning.svg";
+import DailyBangerLogo from "~/assets/svg/SVGLogo.svg";
 import IconMenu from "~/assets/svg/icon-menu.svg";
 export default {
   name: "nav-bar",
   components: {
     LaunchIcon,
-    LightningBolt,
+    DailyBangerLogo,
     IconMenu
   },
   mounted: function() {
@@ -35,26 +36,17 @@ export default {
 .navbar {
   width: 100vw;
   background: $primary-dark;
-  max-height: 80px;
+  max-height: 60px;
   position: sticky;
   display: flex;
   align-items: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 
   .logo {
-    height: 40px;
-    width: 40px;
-    margin-right: 5px;
-
-    g {
-      :first-child {
-        fill: $secondary-dark;
-      }
-
-      :last-child {
-        fill: $secondary-100;
-      }
-    }
+    width: auto;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 15px;
   }
 
   .navbar-items {
@@ -66,12 +58,17 @@ export default {
     width: 100%;
     padding-left: 0 !important;
 
+    .site-title {
+      font-size: 32px;
+      font-weight: 900;
+    }
+
     &:first-child {
       margin-left: 15px;
     }
 
     .navbar-item {
-      font-size: $header-font-size;
+      font-size: 20px;
       font-weight: 600;
       color: white;
       // text-transform: uppercase;
@@ -79,15 +76,21 @@ export default {
       display: flex;
       align-items: center;
 
+      .daily-banger-title {
+        margin-left: -100px;
+        font-size: 32px;
+
+      }
+
       &:hover {
         .logo {
           g {
             :first-child {
-              fill: $secondary-100;
+              fill: $primary;
             }
 
             :last-child {
-              fill: $secondary-dark;
+              fill: $primary;
             }
           }
         }
@@ -95,8 +98,8 @@ export default {
     }
 
     .hamburger-menu {
-      height: 45px;
-      width: 45px;
+      height: 30px;
+      width: 30px;
       float: right;
       fill: white;
       padding-right: 15px;
