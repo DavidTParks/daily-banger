@@ -42,7 +42,7 @@ export default {
 
   .banger-card {
     height: 400px;
-    width: 400px;
+    width: 350px;
     background: white;
     border-radius: $border-radius;
     margin: 10px 20px 0 8px;
@@ -55,13 +55,15 @@ export default {
       .date-pill {
         position: absolute;
         top: 0;
-        right: 0;
+        left: 0;
         margin: 15px;
         padding: 10px;
-        background: $secondary;
+        background: $primary-700;
         font-weight: bold;
         border-radius: 25px;
         box-shadow: 0 1px 3px hsla(0, 0%, 0, 0.3);
+
+        color: $primary-darkest;
       }
       img {
         filter: brightness(0.7);
@@ -78,7 +80,7 @@ export default {
       padding: $standard-padding;
 
       .title {
-        margin-top: 5px;
+        margin-top: 0px;
         color: $primary;
         font-weight: 700;
         font-size: 28px;
@@ -94,6 +96,7 @@ export default {
 
       .play-icon {
         height: 80px;
+        cursor: pointer;
 
         .primary {
           fill: $primary;

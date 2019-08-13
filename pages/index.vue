@@ -36,6 +36,13 @@ export default {
           posted: "August 11, 2019",
           img:
             "https://www.billboard.com/files/styles/article_main_image/public/media/deadmau5-2016-billboard-1548.jpg"
+        },
+        {
+          title: "Flume",
+          artist: "Smoke & Retribution",
+          link: "https://www.youtube.com/watch?v=4fAzM5cI5FM",
+          posted: "August 10, 2019",
+          img: "https://i1.sndcdn.com/artworks-000144960640-uux2wb-t500x500.jpg"
         }
       ]
     };

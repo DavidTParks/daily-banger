@@ -2,24 +2,32 @@
   <div class="navbar">
     <ul class="navbar-items">
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
-      <li class="navbar-item"><LightningBolt class="logo"/>The Daily Banger</li>
+      <li class="navbar-item"></li>
+      <li class="navbar-item">
+        <LightningBolt class="logo"/>The Daily Banger
+      </li>
+      <li class="hamburger-menu">
+        <IconMenu/>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
-import LaunchIcon from '~/assets/svg/icon-launch.svg';
-import LightningBolt from '~/assets/svg/lightning.svg';
+import LaunchIcon from "~/assets/svg/icon-launch.svg";
+import LightningBolt from "~/assets/svg/lightning.svg";
+import IconMenu from "~/assets/svg/icon-menu.svg";
 export default {
-  name: 'nav-bar',
+  name: "nav-bar",
   components: {
     LaunchIcon,
-    LightningBolt
+    LightningBolt,
+    IconMenu
   },
   mounted: function() {
     console.log("Mounted");
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -31,7 +39,7 @@ export default {
   position: sticky;
   display: flex;
   align-items: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 
   .logo {
     height: 40px;
@@ -54,10 +62,14 @@ export default {
     flex-direction: row;
     list-style: none;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     padding-left: 0 !important;
-    
+
+    &:first-child {
+      margin-left: 15px;
+    }
+
     .navbar-item {
       font-size: $header-font-size;
       font-weight: 600;
@@ -68,7 +80,6 @@ export default {
       align-items: center;
 
       &:hover {
-
         .logo {
           g {
             :first-child {
@@ -81,6 +92,15 @@ export default {
           }
         }
       }
+    }
+
+    .hamburger-menu {
+      height: 45px;
+      width: 45px;
+      float: right;
+      fill: white;
+      padding-right: 15px;
+      cursor: pointer;
     }
   }
 }
