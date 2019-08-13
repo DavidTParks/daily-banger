@@ -4,16 +4,11 @@
       <input placeholder="Search" class="search-input" v-model="searchTerm"/>
       <i class="fas fa-search"></i>
     </div>
-    <select v-model="selectedGenre">
-      <option disabled value="">Genre</option>
-      <option v-for="genre in genres" :key="genre" :value="genre">
-        {{genre}}
-      </option>
-    </select>
+
   </div>
 </template>
 
-<<script>
+<script>
 export default {
   name: 'search-bar',
   data() {
@@ -48,9 +43,13 @@ export default {
       position: relative;
       
       .search-input {
+        text-indent: 35px;
         box-shadow: none;
+        width: auto;
         border: none !important;
         outline: none;
+        font-size: 16px;
+        border-radius: 25px;
         height: 40px;
         width: 200px;
         background: #e4e4e4;
@@ -59,9 +58,10 @@ export default {
       }
 
       i {
+        color: $gray-700;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 14px;
+        left: 10px;
         bottom: 0;
         z-index: 2;
       }
