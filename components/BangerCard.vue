@@ -5,11 +5,13 @@
       <div class="date-pill">
         <span>{{banger.posted}}</span>
       </div>
+      <div class="genre-pill">
+        <span>{{banger.genre}}</span>
+      </div>
     </div>
     <div class="banger-card__body">
       <div class="title-row">
           <h1 class="title">{{banger.title}}</h1>
-          <h3 class="genre">{{banger.genre}}</h3>
       </div>
       <h3 class="artist">{{banger.artist}}</h3>
       <IconPlay class="play-icon"></IconPlay>
@@ -65,6 +67,25 @@ export default {
 
       span {
         font-size: 12px;
+      }
+    }
+
+
+    .genre-pill {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 15px;
+      padding: 10px;
+      background: black;
+      font-weight: bold;
+      border-radius: 25px;
+      box-shadow: 0 1px 3px hsla(0, 0%, 0, 0.2);
+      font-size: 12px;
+      color: white;
+
+      span {
+        ont-size: 12px;
       }
     }
     img {

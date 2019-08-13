@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <NavBar></NavBar>
+    <SearchBar/>
     <BangerList class="animated fadeIn faster" :bangers="bangers"></BangerList>
   </div>
 </template>
@@ -9,6 +10,7 @@
 import Logo from "~/components/Logo.vue";
 import NavBar from "~/components/NavBar.vue";
 import BangerList from "~/components/BangerList.vue";
+import SearchBar from "~/components/SearchBar.vue";
 import Announcement from "~/assets/svg/heroicon-announcement-sm.svg";
 
 export default {
@@ -16,6 +18,7 @@ export default {
     Logo,
     NavBar,
     Announcement,
+    SearchBar,
     BangerList
   },
   data() {
