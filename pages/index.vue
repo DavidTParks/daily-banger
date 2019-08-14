@@ -2,7 +2,7 @@
   <div class="container main" :class="{'nav-drawer-opened' : openNav}">
     <NavBar @open-nav-drawer="openNav = !openNav"></NavBar>
     <SearchBar @searchUpdated="updateSearch"/>
-    <BangerList class="animated fadeIn faster" :bangers="filterBangers"></BangerList>
+    <BangerList class="animated fadeIn faster main-content" :bangers="filterBangers"></BangerList>
     <Footer/>
   </div>
 </template>

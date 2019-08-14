@@ -54,7 +54,7 @@ export default {
         width: auto;
         border: none !important;
         outline: none;
-        font-size: 20px;
+        font-size: 16px;
         border-radius: 25px;
         height: 40px;
         width: 250px;

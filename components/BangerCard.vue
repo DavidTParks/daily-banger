@@ -4,7 +4,7 @@
       <img :src="banger.songImage.url">
       <div class="date-pill">
         <span>{{ 
-          `${new Date(banger.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.date).getDate()}, ${new Date(banger.date).getFullYear()}` 
+          `${new Date(banger.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.date).getDate() + 1}, ${new Date(banger.date).getFullYear()}` 
           }}</span>
       </div>
       <div class="genre-pill">
