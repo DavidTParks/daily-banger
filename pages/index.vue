@@ -1,8 +1,9 @@
 <template>
-  <div class="container">
-    <NavBar></NavBar>
+  <div class="container" :class="{'nav-drawer-opened' : openNav}">
+    <NavBar @open-nav-drawer="openNav = !openNav"></NavBar>
     <SearchBar @searchUpdated="updateSearch"/>
     <BangerList class="animated fadeIn faster" :bangers="filterBangers"></BangerList>
+    <Footer/>
   </div>
 </template>
 
@@ -11,6 +12,7 @@ import Logo from "~/components/Logo.vue";
 import NavBar from "~/components/NavBar.vue";
 import BangerList from "~/components/BangerList.vue";
 import SearchBar from "~/components/SearchBar.vue";
+import Footer from "~/components/Footer.vue";
 import Announcement from "~/assets/svg/heroicon-announcement-sm.svg";
 import gql from "graphql-tag";
 export default {
@@ -19,7 +21,8 @@ export default {
     NavBar,
     Announcement,
     SearchBar,
-    BangerList
+    BangerList,
+    Footer
   },
   apollo: {
     allBangers: gql`{
@@ -40,6 +43,7 @@ export default {
   data() {
     return {
       searchTerm: '',
+      openNav: false,
       bangers: [
         {
           title: "Get Free",
@@ -73,6 +77,9 @@ export default {
   methods: {
     updateSearch: function(val) {
       this.searchTerm = val;
+    },
+    openNavDrawer: function() {
+      this.openNav = !this.openNav;
     }
   },
   computed: {

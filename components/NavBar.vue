@@ -7,7 +7,7 @@
         <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/><span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
       </li>
-      <li class="hamburger-menu">
+      <li class="hamburger-menu" @click="openNavDrawer">
         <IconMenu/>
       </li>
     </ul>
@@ -27,6 +27,11 @@ export default {
   },
   mounted: function() {
     console.log("Mounted");
+  },
+  methods: {
+    openNavDrawer: function() {
+      this.$emit('open-nav-drawer');
+    }
   }
 };
 </script>
@@ -35,7 +40,7 @@ export default {
 @import "~/assets/sass/variables.scss";
 .navbar {
   width: 100vw;
-  background: $primary-dark;
+  background: $primary;
   max-height: 60px;
   position: sticky;
   display: flex;
