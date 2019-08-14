@@ -3,7 +3,7 @@
     <ul class="navbar-items">
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
       <li class="navbar-item"></li>
-      <li class="navbar-item">
+      <li class="navbar-item logo">
         <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/><span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
       </li>
@@ -64,7 +64,7 @@ export default {
     }
 
     &:first-child {
-      margin-left: 15px;
+      // margin-left: 15px;
     }
 
     .navbar-item {
@@ -75,6 +75,10 @@ export default {
       cursor: pointer;
       display: flex;
       align-items: center;
+
+      &.logo {
+        margin-left: -60px;
+      }
 
       .daily-banger-title {
         margin-left: -100px;
