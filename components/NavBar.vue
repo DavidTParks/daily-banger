@@ -78,10 +78,6 @@ export default {
       display: flex;
       align-items: center;
 
-      &.logo {
-        margin-left: -60px;
-      }
-
       .daily-banger-title {
         margin-left: -100px;
         font-size: 32px;
