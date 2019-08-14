@@ -31,13 +31,14 @@ export default {
 <style lang="scss">
 @import "~/assets/sass/variables.scss";
   .search-bar-wrapper {
-    width: 100vw;
     display: flex;
     flex-dirction: row;
     align-items: center;
     justify-content: center;
     padding: 15px;
     background: $gray-light;
+    border-bottom: 1px solid $gray-900;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 
     .input-wrapper {
       position: relative;
