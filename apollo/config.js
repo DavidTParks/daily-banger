@@ -1,6 +1,6 @@
 export default function (context) {
     return {
         httpEndpoint: 'https://graphql.datocms.com',
-        getAuth: () => `Bearer ${process.env.datocmsApiKey}`,
+        getAuth: () => process.env.datocmsApiKey,
     }
 }
