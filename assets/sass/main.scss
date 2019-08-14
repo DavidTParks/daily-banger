@@ -24,6 +24,11 @@ select {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  &.nav-drawer-opened {
+    width: 80vw;
+    left: 0;
+  }
   // justify-content: center;
   // align-items: center;
   // text-align: center;
