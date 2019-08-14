@@ -44,14 +44,14 @@ export default {
       
       .search-input {
         text-indent: 35px;
-        box-shadow: none;
+        box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
         width: auto;
         border: none !important;
         outline: none;
         font-size: 16px;
         border-radius: 25px;
         height: 40px;
-        width: 200px;
+        width: 250px;
         background: #e4e4e4;
         display: flex;
         align-items: center;
