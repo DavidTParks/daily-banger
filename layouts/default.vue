@@ -19,7 +19,8 @@ export default {
 
 <style>
 .main {
-  position: relative
+  position: relative;
+  min-height: 100vh;
 }
 /* html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
