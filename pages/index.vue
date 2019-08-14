@@ -23,7 +23,7 @@ export default {
   },
   apollo: {
     allBangers: gql`{
-        allBangers {
+        allBangers(orderBy: date_DESC) {
           artist
           date
           id

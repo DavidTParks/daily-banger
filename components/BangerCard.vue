@@ -3,7 +3,9 @@
     <div class="banger-card__header">
       <img :src="banger.songImage.url">
       <div class="date-pill">
-        <span>{{banger.date}}</span>
+        <span>{{ 
+          `${new Date(banger.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.date).getDate()}, ${new Date(banger.date).getFullYear()}` 
+          }}</span>
       </div>
       <div class="genre-pill">
         <span>{{banger.genre}}</span>
