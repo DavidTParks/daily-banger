@@ -30,5 +30,9 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 1rem;
+
+  :last-child {
+    margin-bottom: 100px;
+  }
 }
 </style>
