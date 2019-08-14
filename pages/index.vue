@@ -1,5 +1,5 @@
 <template>
-  <div class="container main" :class="{'nav-drawer-opened' : openNav}">
+  <div class="container" :class="{'nav-drawer-opened' : openNav}">
     <SearchBar @searchUpdated="updateSearch"/>
     <BangerList class="animated fadeIn faster main-content" :bangers="filterBangers"></BangerList>
   </div>
@@ -83,7 +83,9 @@ export default {
   computed: {
     filterBangers: function() {
       return this.allBangers.filter(banger => {
-        return banger.songTitle.toLowerCase().includes(this.searchTerm.toLowerCase());
+        return banger.songTitle.toLowerCase().includes(this.searchTerm.toLowerCase()) 
+            || banger.genre.toLowerCase().includes(this.searchTerm.toLowerCase()) 
+            || banger.artist.toLowerCase().includes(this.searchTerm.toLowerCase());
       })
     }
   }
