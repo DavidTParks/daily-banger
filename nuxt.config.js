@@ -41,6 +41,12 @@ module.exports = {
   devModules: [
   ],
   /*
+  ** Environment Variables
+  */
+  env: {
+    datocmsApiKey: '09d2a939455ddb476b772394f82ea1'
+  },
+  /*
   ** Nuxt.js modules
   */
   modules: [
