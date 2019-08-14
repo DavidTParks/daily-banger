@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <NavBar></NavBar>
-    <SearchBar/>
-    <BangerList class="animated fadeIn faster" :bangers="allBangers"></BangerList>
+    <SearchBar @searchUpdated="updateSearch"/>
+    <BangerList class="animated fadeIn faster" :bangers="filterBangers"></BangerList>
   </div>
 </template>
 
@@ -39,6 +39,7 @@ export default {
   },
   data() {
     return {
+      searchTerm: '',
       bangers: [
         {
           title: "Get Free",
@@ -68,6 +69,18 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    updateSearch: function(val) {
+      this.searchTerm = val;
+    }
+  },
+  computed: {
+    filterBangers: function() {
+      return this.allBangers.filter(banger => {
+        return banger.songTitle.toLowerCase().includes(this.searchTerm.toLowerCase());
+      })
+    }
   }
 };
 </script>
