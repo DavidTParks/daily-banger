@@ -1,9 +1,9 @@
 <template>
   <div class="banger-card">
     <div class="banger-card__header">
-      <img :src="banger.img">
+      <img :src="banger.songImage.url">
       <div class="date-pill">
-        <span>{{banger.posted}}</span>
+        <span>{{banger.date}}</span>
       </div>
       <div class="genre-pill">
         <span>{{banger.genre}}</span>
@@ -11,7 +11,7 @@
     </div>
     <div class="banger-card__body">
       <div class="title-row">
-          <h1 class="title">{{banger.title}}</h1>
+          <h1 class="title">{{banger.songTitle}}</h1>
       </div>
       <h3 class="artist">{{banger.artist}}</h3>
       <IconPlay class="play-icon"></IconPlay>

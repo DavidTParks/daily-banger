@@ -2,7 +2,7 @@
   <div class="banger-list-wrapper">
     <BangerCard
     v-for="(banger, index) in bangers"
-    :key="index"
+    :key="banger.id"
     :banger="banger"
     >
     </BangerCard>

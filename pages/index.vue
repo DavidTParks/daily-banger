@@ -2,7 +2,7 @@
   <div class="container">
     <NavBar></NavBar>
     <SearchBar/>
-    <BangerList class="animated fadeIn faster" :bangers="bangers"></BangerList>
+    <BangerList class="animated fadeIn faster" :bangers="allBangers"></BangerList>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ import NavBar from "~/components/NavBar.vue";
 import BangerList from "~/components/BangerList.vue";
 import SearchBar from "~/components/SearchBar.vue";
 import Announcement from "~/assets/svg/heroicon-announcement-sm.svg";
-
+import gql from "graphql-tag";
 export default {
   components: {
     Logo,
@@ -20,6 +20,22 @@ export default {
     Announcement,
     SearchBar,
     BangerList
+  },
+  apollo: {
+    allBangers: gql`{
+        allBangers {
+          artist
+          date
+          id
+          songTitle
+          songImage {
+            url
+          }
+          soundcloudLink
+          urlSlug
+          genre
+        }
+      }`
   },
   data() {
     return {
@@ -131,10 +147,10 @@ export default {
 }
 
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {

@@ -12,12 +12,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     script: [
-      { src: 'https://kit.fontawesome.com/215417b77b.js'}
+      { src: 'https://kit.fontawesome.com/215417b77b.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/FaviconLogo.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap' },
-      { rel: 'stylesheet', type: "text/css", href:"https://cdn.jsdelivr.net/npm/animate.css@3.5.1" },
+      { rel: 'stylesheet', type: "text/css", href: "https://cdn.jsdelivr.net/npm/animate.css@3.5.1" },
     ]
   },
   /*
@@ -44,7 +44,13 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/apollo',
   ],
+  apollo: {
+    clientConfigs: {
+      default: '~/apollo/config.js'
+    }
+  },
   /*
   ** Build configuration
   */
@@ -52,7 +58,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
       const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
 
       svgRule.test = /\.(png|jpe?g|gif|webp)$/;
