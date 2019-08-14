@@ -13,8 +13,9 @@ export default {
 <style lang="scss">
 @import "~/assets/sass/variables.scss";
 .footer {
+    margin-top: 50px;
     width: 100vw;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     min-height: 70px;
     background: $gray-100;
