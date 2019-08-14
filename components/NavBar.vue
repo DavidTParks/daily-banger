@@ -61,6 +61,8 @@ export default {
     .site-title {
       font-size: 26px;
       font-weight: 900;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     &:first-child {
