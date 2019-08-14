@@ -3,4 +3,4 @@
 > A fire song every day. 
 
 ## Stack
-Site is built using the JAMstack. NuxtJs, Netlify CMS, Netlify Deployment. 
+Site is built using the JAMstack. Technology used: NuxtJs, Apollo GraphQL, DatoCMS, Netlify, Github, Jest. 
