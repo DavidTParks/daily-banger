@@ -16,8 +16,10 @@
           <h1 class="title">{{banger.songTitle}}</h1>
       </div>
       <h3 class="artist">{{banger.artist}}</h3>
-      <IconPlay class="play-icon"></IconPlay>
-      <img src="https://developers.soundcloud.com/assets/logo_big_black-4fbe88aa0bf28767bbfc65a08c828c76.png"/>
+      <div class="play-wrapper">
+        <IconPlay class="play-icon"></IconPlay>
+      </div>
+      <!-- <img src="https://developers.soundcloud.com/assets/logo_big_black-4fbe88aa0bf28767bbfc65a08c828c76.png"/> -->
     </div>
   </div>
 </template>
@@ -132,16 +134,20 @@ export default {
       color: $gray-400;
     }
 
-    .play-icon {
+    .play-wrapper {
       height: 50px;
-      cursor: pointer;
+      width: 50px;
+      .play-icon {
+        height: 50px;
+        cursor: pointer;
 
-      .primary {
-        fill: $primary;
-      }
+        .primary {
+          fill: $primary;
+        }
 
-      .secondary {
-        fill: white;
+        .secondary {
+          fill: white;
+        }
       }
     }
   }
