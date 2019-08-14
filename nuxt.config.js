@@ -1,4 +1,4 @@
-
+const env = require('dotenv').config();
 module.exports = {
   mode: 'universal',
   /*
@@ -44,7 +44,7 @@ module.exports = {
   ** Environment Variables
   */
   env: {
-    datocmsApiKey: '09d2a939455ddb476b772394f82ea1'
+    datocmsApiKey: process.env.DATO_KEY
   },
   /*
   ** Nuxt.js modules
