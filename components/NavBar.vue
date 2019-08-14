@@ -59,7 +59,7 @@ export default {
     padding-left: 0 !important;
 
     .site-title {
-      font-size: 32px;
+      font-size: 26px;
       font-weight: 900;
     }
 
