@@ -1,7 +1,7 @@
 <template>
   <div class="search-bar-wrapper">
     <div class="input-wrapper">
-      <input placeholder="Search" class="search-input" v-model="searchTerm"/>
+      <input placeholder="Search" class="search-input" v-model="searchTerm" @input="searchUpdated($event)"/>
       <i class="fas fa-search"></i>
     </div>
 
@@ -23,6 +23,11 @@ export default {
         'R&B',
         'Dubstep',
       ]
+    }
+  },
+  methods: {
+    searchUpdated: function(e) {
+      this.$emit('searchUpdated', e.target.value);
     }
   }
 }
