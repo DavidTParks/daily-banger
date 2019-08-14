@@ -1,22 +1,6 @@
 # daily-banger
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c197396c-2f6d-4c53-8b5b-7397e46d0f51/deploy-status)](https://app.netlify.com/sites/musing-haibt-3452dd/deploys)
+> A fire song every day. 
 
-> My impeccable Nuxt.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm run install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Stack
+Site is built using the JAMstack. NuxtJs, Netlify CMS, Netlify Deployment. 
