@@ -32,7 +32,7 @@ export default {
   margin-top: 1rem;
 
   :last-child {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
 }
 </style>
