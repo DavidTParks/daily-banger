@@ -25,10 +25,6 @@ select {
   flex-direction: column;
   position: relative;
 
-  &.main {
-    min-height: 100vh;
-  }
-
   &.nav-drawer-opened {
     width: 80vw;
     left: 0;

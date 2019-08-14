@@ -1,10 +1,26 @@
 <template>
-  <div>
+  <div class="main">
+    <NavBar/>
     <nuxt />
+    <Footer/>
   </div>
 </template>
 
+<script>
+import NavBar from '~/components/NavBar.vue';
+import Footer from '~/components/Footer.vue';
+export default {
+  components: {
+    NavBar,
+    Footer
+  }
+}
+</script>
+
 <style>
+.main {
+  position: relative
+}
 /* html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
