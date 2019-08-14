@@ -44,12 +44,12 @@ export default {
       position: relative;
       
       .search-input {
-        text-indent: 35px;
+        text-indent: 40px;
         box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
         width: auto;
         border: none !important;
         outline: none;
-        font-size: 16px;
+        font-size: 20px;
         border-radius: 25px;
         height: 40px;
         width: 250px;
@@ -62,7 +62,7 @@ export default {
         color: $gray-700;
         position: absolute;
         top: 14px;
-        left: 10px;
+        left: 15px;
         bottom: 0;
         z-index: 2;
       }
