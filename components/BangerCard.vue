@@ -17,7 +17,7 @@
       </div>
       <h3 class="artist">{{banger.artist}}</h3>
       <div class="play-wrapper">
-        <a v-if="banger.soundcloudLink === songUrl && songStatus === true"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
+        <a v-if="banger.soundcloudLink === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
         <a v-else @click="playClicked(banger)"><IconPlay class="play-icon"></IconPlay></a>
       </div>
       <!-- <img src="https://developers.soundcloud.com/assets/logo_big_black-4fbe88aa0bf28767bbfc65a08c828c76.png"/> -->
@@ -62,6 +62,9 @@ export default {
     },
     songStatus() {
       return this.$store.state.isSongPlaying;
+    },
+    songLoaded() {
+      return this.$store.state.songLoaded;
     }
   }
 }
