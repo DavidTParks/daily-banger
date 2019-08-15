@@ -41,8 +41,7 @@ export default {
   },
   methods : {
     playClicked (url) {
-      // console.log(url);
-      this.$emit('play-song', url);
+      this.$store.commit('setSong', url);
     }
   }
 }

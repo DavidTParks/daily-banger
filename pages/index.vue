@@ -4,17 +4,9 @@
     <BangerList 
     class="animated fadeIn faster main-content" 
     :bangers="filterBangers"
-    @play-song="playNewSong"
     ></BangerList>
-    <SoundcloudPlayer v-if="soundcloudUrl"
-    :song-url="soundcloudUrl"
+    <SoundcloudPlayer
     />
-    <!-- <div id="player">
-      <iframe id="so" width="100%" height="160" scrolling="no" frameborder="0"
-      :src="computedUrl"
-      @load="iFramePreload"
-      ></iframe>
-    </div> -->
   </div>
 </template>
 
@@ -52,16 +44,6 @@ export default {
           genre
         }
       }`
-  },
-  mounted () {
-    // const IFrame = document.getElementById('so');
-    // this.player = SC.Widget(IFrame);
-    // this.player.bind(SC.Widget.Events.PLAY_PROGRESS, (e) => {
-    //   this.song.currentPosition = e.currentPosition;
-    // });
-    // this.$on('newValueSet', (newValue) => {
-    //   this.player.seekTo(newValue[0]);
-    // })
   },
   data() {
     return {
@@ -117,28 +99,6 @@ export default {
     openNavDrawer () {
       this.openNav = !this.openNav;
     },
-    // iFramePreload() {
-    //   setTimeout(this.iFrameLoaded, 1000);
-    // },
-    checkUrl(url) {
-      const pattern = /^https:\/\/soundcloud\.com\/[a-z1-9-]*\/[a-z1-9-]*\/?$/;
-      if (url === undefined) {
-        return null
-      } else {
-        return url.match(pattern)
-      }
-    },
-    // iFrameLoaded () {
-    //   console.log("Playing song");
-    //   this.player.play();
-    // },
-    // loadSong () {
-    //   this.player.load(this.soundcloudUrl);
-    // },
-    playNewSong(url) {
-      this.soundcloudUrl = url;
-      // this.loadSong();
-    } 
   },
   computed: {
     filterBangers: function() {
@@ -148,10 +108,6 @@ export default {
             || banger.artist.toLowerCase().includes(this.searchTerm.toLowerCase());
       })
     },
-    computedUrl () {
-      const base = "https://w.soundcloud.com/player/?url=";
-      return base + this.soundcloudUrl;
-    }
   },
 };
 </script>

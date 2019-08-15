@@ -1,5 +1,5 @@
 <template>
-    <div class="player-wrapper">
+    <div class="player-wrapper" v-show="songPlaying">
         <iframe id="so" width="100%" height="160" scrolling="no" frameborder="0"
         allow="autoplay"
         :src="computedUrl"
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 export default {
     name: 'soundcloud-player',
     props: ['songUrl'],
@@ -39,6 +40,11 @@ export default {
             this.player.seekTo(newValue[0]);
         })
     },
+    watch : {
+        songPlaying: function() {
+            this.player.load(this.songPlaying);
+        }
+    },
     methods: {
         iFramePreload() {
             setTimeout(this.iFrameLoaded, 1000);
@@ -67,6 +73,9 @@ export default {
         computedUrl () {
             const base = "https://w.soundcloud.com/player/?url=";
             return base + this.songUrl;
+        },
+        songPlaying() {
+            return this.$store.state.songCurrentlyPlaying;
         }
     }
 }

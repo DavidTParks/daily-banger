@@ -2,7 +2,7 @@
   <div class="main">
     <NavBar/>
     <nuxt />
-    <Footer @resume-play="playSong"/>
+    <!-- <Footer/> -->
   </div>
 </template>
 
