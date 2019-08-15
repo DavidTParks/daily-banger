@@ -4,7 +4,7 @@
             <div class="play-controls">
                 <div class="now-playing">
                     <img v-if="isSongLoaded && songMetadata" :src="songMetadata.artwork_url"/>
-                    <p v-if="isSongLoaded && songMetadata">Now Playing<span>{{songMetadata.title}} by {{artist}}</span></p>
+                    <p v-if="isSongLoaded && songMetadata">Now Playing<span>{{artist}} - {{songMetadata.title}}</span></p>
                 </div>
                 <div class="actions">
                     <FastRewind class="fast-rewind"/>
