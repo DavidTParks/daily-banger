@@ -41,11 +41,11 @@ export default {
         })
     },
     watch : {
-        songPlaying: function() {
+        songPlaying: function(oldVal, newVal) {
+                        console.log(oldVal,newVal);
             this.player.load(this.songPlaying);
         },
         songStatus: function(newVal) {
-            console.log(newVal);
             if(!newVal) {
                 this.player.pause();
             } else {
@@ -68,6 +68,7 @@ export default {
         iFrameLoaded () {
             this.player.getCurrentSound((song) => {
                 this.song = song;
+                this.$store.commit('setSongLoaded', true);
                 this.$store.commit('setSongMetadata', song);
             })
             this.player.play();

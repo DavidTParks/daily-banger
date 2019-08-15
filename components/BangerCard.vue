@@ -18,7 +18,7 @@
       <h3 class="artist">{{banger.artist}}</h3>
       <div class="play-wrapper">
         <a v-if="banger.soundcloudLink === songUrl && songStatus === true"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
-        <a v-else @click="playClicked(banger.soundcloudLink)"><IconPlay class="play-icon"></IconPlay></a>
+        <a v-else @click="playClicked(banger)"><IconPlay class="play-icon"></IconPlay></a>
       </div>
       <!-- <img src="https://developers.soundcloud.com/assets/logo_big_black-4fbe88aa0bf28767bbfc65a08c828c76.png"/> -->
     </div>
@@ -43,8 +43,14 @@ export default {
     }
   },
   methods : {
-    playClicked (url) {
-      this.$store.commit('setSong', url);
+    playClicked (banger) {
+      if(this.songUrl === banger.soundcloudLink) {
+        this.$store.commit('resumePlay');
+      } else {
+        this.$store.commit('setSongLoaded', false);
+        this.$store.commit('setSong', banger.soundcloudLink);
+        this.$store.commit('setArtist', banger.artist);
+      }
     },
     pauseSong() {
       this.$store.commit('pauseSong');

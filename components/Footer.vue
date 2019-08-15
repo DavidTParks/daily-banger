@@ -2,10 +2,19 @@
     <div class="footer">
         <div class="play-bar">
             <div class="play-controls">
-                <FastRewind class="fast-rewind"/>
-                <IconPlay @click="playSong"/>
-                <IconPause/>
-                <FastForward class="fast-forward"/>
+                <div class="now-playing">
+                    <img v-if="isSongLoaded && songMetadata" :src="songMetadata.artwork_url"/>
+                    <p v-if="isSongLoaded && songMetadata">Now Playing: <span>{{songMetadata.title}} by {{artist}}</span></p>
+                </div>
+                <div class="actions">
+                    <FastRewind class="fast-rewind"/>
+                    <IconPlay v-if="!songStatus" @click="playSong"/>
+                    <IconPause v-else @click="pauseSong"/>
+                    <FastForward class="fast-forward"/>
+                </div>
+                <div class="item">
+                    <img src="https://developers.soundcloud.com/assets/logo_big_white-65c2b096da68dd533db18b9f07d14054.png"/>
+                </div>
             </div>
         </div>
         <p class="site-footer">© The Daily Banger</p>
@@ -26,9 +35,29 @@ export default {
       FastRewind
   },
   methods : {
-      playSong() {
-          this.$emit('resume-play');
-      }
+    playSong () {
+      this.$store.commit('resumePlay');
+    },
+    pauseSong() {
+      this.$store.commit('pauseSong');
+    }
+  },
+  computed: {
+    songPlaying() {
+        return this.$store.state.songCurrentlyPlaying;
+    },
+    songStatus() {
+        return this.$store.state.isSongPlaying;
+    },
+    songMetadata() {
+        return this.$store.state.songObject;
+    },
+    isSongLoaded() {
+        return this.$store.state.songLoaded;
+    },
+    artist() {
+        return this.$store.state.artist;
+    }
   }
 }
 </script>
@@ -40,7 +69,7 @@ export default {
     width: 100vw;
     position: absolute;
     bottom: 0;
-    min-height: 70px;
+    min-height: 90px;
     background: $gray-100;
     // display: flex;
     // justify-content: center;
@@ -60,8 +89,47 @@ export default {
         .play-controls {
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            // justify-content: space-between;
             align-items: center;
+
+            .now-playing {
+                flex:1;
+                display: flex;
+                align-items: center;
+
+                img {
+                    margin-right: 15px;
+                    height: 40px;
+                    width: 40px;
+                }
+
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+                    font-size: 14px;
+                    color: white;
+
+                    span {
+                        color: $cyan-800;
+                    }
+                }
+            }
+
+            .actions {
+                flex: 1;
+                text-align: center;
+            }
+
+            .item {
+                flex: 1;
+                text-align: right;
+
+                img {
+                    padding-right: 15px;
+                }
+            }
+            
             svg {
                 cursor: pointer;
                 height: 30px;

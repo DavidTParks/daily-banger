@@ -1,6 +1,8 @@
 export const state = () => ({
     songCurrentlyPlaying: '',
     isSongPlaying: false,
+    songLoaded: false,
+    artist: '',
     songObject: {
 
     }
@@ -19,5 +21,11 @@ export const mutations = {
     },
     setSongMetadata(state, metadata) {
         state.songObject = metadata;
+    },
+    setSongLoaded(state, isLoaded)  {
+        state.songLoaded = isLoaded;
+    },
+    setArtist(state, artist) {
+        state.artist = artist;
     }
 }
