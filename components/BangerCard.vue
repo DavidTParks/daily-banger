@@ -17,7 +17,8 @@
       </div>
       <h3 class="artist">{{banger.artist}}</h3>
       <div class="play-wrapper">
-        <a @click="playClicked(banger.soundcloudLink)"><IconPlay class="play-icon"></IconPlay></a>
+        <a v-if="banger.soundcloudLink === songUrl && songStatus === true"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
+        <a v-else @click="playClicked(banger.soundcloudLink)"><IconPlay class="play-icon"></IconPlay></a>
       </div>
       <!-- <img src="https://developers.soundcloud.com/assets/logo_big_black-4fbe88aa0bf28767bbfc65a08c828c76.png"/> -->
     </div>
@@ -26,10 +27,12 @@
 
 <script>
 import IconPlay from "~/assets/svg/icon-play.svg";
+import IconPause from "~/assets/svg/icon-pause.svg";
 export default {
   name: 'banger-card',
   components: {
-    IconPlay
+    IconPlay,
+    IconPause
   },
   props: [
     'banger'
@@ -42,6 +45,17 @@ export default {
   methods : {
     playClicked (url) {
       this.$store.commit('setSong', url);
+    },
+    pauseSong() {
+      this.$store.commit('pauseSong');
+    }
+  },
+  computed: {
+    songUrl() {
+      return this.$store.state.songCurrentlyPlaying;
+    },
+    songStatus() {
+      return this.$store.state.isSongPlaying;
     }
   }
 }

@@ -43,6 +43,14 @@ export default {
     watch : {
         songPlaying: function() {
             this.player.load(this.songPlaying);
+        },
+        songStatus: function(newVal) {
+            console.log(newVal);
+            if(!newVal) {
+                this.player.pause();
+            } else {
+                this.player.play();
+            }
         }
     },
     methods: {
@@ -58,7 +66,9 @@ export default {
             }
         },
         iFrameLoaded () {
-            console.log("Playing song");
+            this.player.getCurrentSound((song) => {
+                this.song = song;
+            })
             this.player.play();
         },
         loadSong () {
@@ -76,6 +86,9 @@ export default {
         },
         songPlaying() {
             return this.$store.state.songCurrentlyPlaying;
+        },
+        songStatus() {
+            return this.$store.state.isSongPlaying;
         }
     }
 }
