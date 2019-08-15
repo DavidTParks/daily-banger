@@ -54,7 +54,7 @@ export default {
             margin-top: 0;
             margin-bottom: 0;
             text-align: center;
-            color: white;
+            color: $gray-700;
         }
 
         .play-controls {
@@ -92,7 +92,7 @@ export default {
 
     .site-footer {
         text-align: center;
-        color: white;
+        color: $gray-800;
     }
 }
 </style>

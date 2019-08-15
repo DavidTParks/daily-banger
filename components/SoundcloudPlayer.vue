@@ -68,6 +68,7 @@ export default {
         iFrameLoaded () {
             this.player.getCurrentSound((song) => {
                 this.song = song;
+                this.$store.commit('setSongMetadata', song);
             })
             this.player.play();
         },
@@ -89,7 +90,21 @@ export default {
         },
         songStatus() {
             return this.$store.state.isSongPlaying;
+        },
+        songMetadata() {
+            return this.$store.state.songObject;
+        },
+        percentThroughSong() {
+            return this.songMetadata.currentPosition / this.songMetadata.duration;
         }
     }
 }
 </script>
+
+<style lang="scss">
+.player-wrapper {
+    opacity: 0;
+    position: absolute;
+    left: -9999em;
+}
+</style>

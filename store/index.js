@@ -1,6 +1,9 @@
 export const state = () => ({
     songCurrentlyPlaying: '',
     isSongPlaying: false,
+    songObject: {
+
+    }
 })
 
 export const mutations = {
@@ -13,5 +16,8 @@ export const mutations = {
     },
     resumePlay(state) {
         state.isSongPlaying = true;
+    },
+    setSongMetadata(state, metadata) {
+        state.songObject = metadata;
     }
 }
