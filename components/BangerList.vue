@@ -1,6 +1,7 @@
 <template>
   <div class="banger-list-wrapper">
     <BangerCard
+    @play-song="emitUrl"
     v-for="(banger, index) in bangers"
     :key="banger.id"
     :banger="banger"
@@ -19,6 +20,11 @@ export default {
   props: ["bangers"],
   data() {
     return {};
+  },
+  methods : {
+    emitUrl(url) {
+      this.$emit('play-song', url);
+    }
   }
 };
 </script>

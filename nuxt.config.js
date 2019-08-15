@@ -12,7 +12,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'A curated song every day, always fire.' }
     ],
     script: [
-      { src: 'https://kit.fontawesome.com/215417b77b.js' }
+      { src: 'https://kit.fontawesome.com/215417b77b.js' },
+      { type: 'text/javascript', src: 'https://w.soundcloud.com/player/api.js'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/FaviconLogo.png' },

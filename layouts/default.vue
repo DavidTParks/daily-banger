@@ -2,7 +2,7 @@
   <div class="main">
     <NavBar/>
     <nuxt />
-    <Footer/>
+    <Footer @resume-play="playSong"/>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   components: {
     NavBar,
     Footer
-  }
+  },
 }
 </script>
 

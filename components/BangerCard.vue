@@ -17,7 +17,7 @@
       </div>
       <h3 class="artist">{{banger.artist}}</h3>
       <div class="play-wrapper">
-        <IconPlay class="play-icon"></IconPlay>
+        <a @click="playClicked(banger.soundcloudLink)"><IconPlay class="play-icon"></IconPlay></a>
       </div>
       <!-- <img src="https://developers.soundcloud.com/assets/logo_big_black-4fbe88aa0bf28767bbfc65a08c828c76.png"/> -->
     </div>
@@ -37,6 +37,12 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods : {
+    playClicked (url) {
+      // console.log(url);
+      this.$emit('play-song', url);
     }
   }
 }

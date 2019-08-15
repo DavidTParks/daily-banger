@@ -3,7 +3,7 @@
         <div class="play-bar">
             <div class="play-controls">
                 <FastRewind class="fast-rewind"/>
-                <IconPlay/>
+                <IconPlay @click="playSong"/>
                 <IconPause/>
                 <FastForward class="fast-forward"/>
             </div>
@@ -24,6 +24,11 @@ export default {
       IconPause,
       FastForward,
       FastRewind
+  },
+  methods : {
+      playSong() {
+          this.$emit('resume-play');
+      }
   }
 }
 </script>
