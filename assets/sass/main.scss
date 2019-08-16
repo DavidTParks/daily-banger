@@ -72,8 +72,7 @@ select {
 
 @media(max-width: 555px) {
   .hamburger-menu {
-    display: unset !important;
-    display:flex !important;
+    display: flex !important;
     svg {
       margin-left: auto;
     }
