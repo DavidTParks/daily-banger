@@ -82,8 +82,6 @@ export default {
 <style lang="scss">
 @import "~/assets/sass/variables.scss";
 .banger-card {
-  // height: 300px;
-  // width: 300px;
   background: white;
   height: 100%;
   cursor: pointer;
@@ -91,18 +89,8 @@ export default {
   overflow: hidden;
   position: relative;
   z-index: 2;
-  // margin: 10px;
-  // margin: 10px 20px 15px 8px;
-  // overflow: hidden;
-  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px -1px;
-  //   height: 550px;
-  // flex-basis: 20%;
-  // -ms-flex: auto;
-  // width: 259px;
-  // position: relative;
-  // padding: 10px;
-  // box-sizing: border-box;
+
 
   &__header {
     position: relative;
@@ -114,6 +102,8 @@ export default {
       left: 0;
       margin: 15px;
       padding: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
       background: $primary-700;
       font-weight: bold;
       border-radius: 25px;
@@ -133,6 +123,8 @@ export default {
       right: 0;
       margin: 15px;
       padding: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
       background: black;
       font-weight: bold;
       border-radius: 25px;
@@ -207,7 +199,7 @@ export default {
     }
 
     .artist {
-      font-size: 16px;
+      font-size: 18px;
       margin-bottom: 15px;
       margin-top: 0 !important;
       color: $gray-400;
