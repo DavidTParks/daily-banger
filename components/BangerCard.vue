@@ -90,6 +90,12 @@ export default {
   position: relative;
   z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px -1px;
+  transition: all .2s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 50px -1px;
+  }
 
 
   &__header {
@@ -147,13 +153,13 @@ export default {
     }
 
     .play-wrapper {
-      height: 80px;
-      width: 80px;
+      height: $play-button-dimension;
+      width: $play-button-dimension;
       margin: auto;
       position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
       .play-icon {
-        height: 80px;
+        height: $play-button-dimension;
         cursor: pointer;
         opacity: 0.8;
 
