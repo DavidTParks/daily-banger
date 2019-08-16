@@ -1,5 +1,5 @@
 <template>
-  <div class="banger-list-wrapper">
+  <div class="grid-row banger-list-wrapper">
     <BangerCard
     @play-song="emitUrl"
     v-for="(banger, index) in bangers"
@@ -31,14 +31,8 @@ export default {
 
 <style lang="scss">
 @import "~/assets/sass/variables.scss";
-.banger-list-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1rem;
 
-  :last-child {
-    margin-bottom: 150px;
-  }
+.banger-list-wrapper {
+  margin-top: 30px;
 }
 </style>

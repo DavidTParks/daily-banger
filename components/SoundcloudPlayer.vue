@@ -1,6 +1,6 @@
 <template>
     <div class="player-wrapper" v-show="songPlaying">
-        <iframe id="so" width="100%" height="160" scrolling="no" frameborder="0"
+        <iframe id="so" scrolling="no" frameborder="0"
         allow="autoplay"
         :src="computedUrl"
         @load="iFramePreload"
@@ -104,8 +104,14 @@ export default {
 
 <style lang="scss">
 .player-wrapper {
-    opacity: 0;
-    position: absolute;
-    left: -9999em;
+    // display: none;
+
+    iframe {
+        z-index: -100;
+        opacity: 0;
+        position: absolute;
+        left: -9999em;
+        top: 0;
+    }
 }
 </style>

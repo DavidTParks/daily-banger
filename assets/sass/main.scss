@@ -20,16 +20,50 @@ select {
 }
 
 .container {
+  max-width: 1335px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
-  &.nav-drawer-opened {
-    width: 80vw;
-    left: 0;
-  }
   // justify-content: center;
   // align-items: center;
   // text-align: center;
+}
+
+.grid-row {
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: flex-start;
+}
+
+.grid-item {
+  height: 350px;
+  flex-basis: 25%;
+  -ms-flex: auto;
+  padding: 10px;
+  width: 259px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.main {
+  margin-bottom: 300px;
+}
+
+@media(max-width: 1333px) {
+  .grid-item {
+    flex-basis: 25%;
+  }
+}
+@media(max-width: 1073px) {
+   .grid-item {
+    flex-basis: 33.33%;
+  }
+}
+@media(max-width: 815px) {
+  .grid-item {
+    flex-basis: 50%;
+  }
+}
+@media(max-width: 555px) {
+  .grid-item {
+    flex-basis: 100%;
+  }
 }

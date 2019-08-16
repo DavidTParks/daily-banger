@@ -36,7 +36,9 @@ export default {
   },
   methods : {
     playSong () {
-      this.$store.commit('resumePlay');
+        if(this.songPlaying) {
+            this.$store.commit('resumePlay');
+        }
     },
     pauseSong() {
       this.$store.commit('pauseSong');
@@ -65,9 +67,8 @@ export default {
 <style lang="scss">
 @import "~/assets/sass/variables.scss";
 .footer {
-    margin-top: 50px;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     min-height: 90px;
     background: $gray-100;
@@ -124,6 +125,7 @@ export default {
             .item {
                 flex: 1;
                 text-align: right;
+                opacity: 0.2;
 
                 img {
                     padding-right: 15px;

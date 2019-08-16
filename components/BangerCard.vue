@@ -1,4 +1,5 @@
 <template>
+<div class="grid-item" @click="togglePlay(banger)">
   <div class="banger-card">
     <div class="banger-card__header">
       <img :src="banger.songImage.url">
@@ -10,19 +11,20 @@
       <div class="genre-pill">
         <span>{{banger.genre}}</span>
       </div>
+      <div class="play-wrapper">
+        <a v-if="banger.soundcloudLink === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
+        <a v-else @click="playClicked(banger)"><IconPlay class="play-icon"></IconPlay></a>
+      </div>
     </div>
     <div class="banger-card__body">
       <div class="title-row">
           <h1 class="title">{{banger.songTitle}}</h1>
       </div>
       <h3 class="artist">{{banger.artist}}</h3>
-      <div class="play-wrapper">
-        <a v-if="banger.soundcloudLink === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
-        <a v-else @click="playClicked(banger)"><IconPlay class="play-icon"></IconPlay></a>
-      </div>
       <!-- <img src="https://developers.soundcloud.com/assets/logo_big_black-4fbe88aa0bf28767bbfc65a08c828c76.png"/> -->
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -54,6 +56,13 @@ export default {
     },
     pauseSong() {
       this.$store.commit('pauseSong');
+    },
+    togglePlay(banger) {
+      if(this.songStatus === true) {
+        this.playClicked(banger)
+      } else {
+        this.pauseSong();
+      }
     }
   },
   computed: {
@@ -73,16 +82,31 @@ export default {
 <style lang="scss">
 @import "~/assets/sass/variables.scss";
 .banger-card {
-  height: 300px;
-  width: 300px;
+  // height: 300px;
+  // width: 300px;
   background: white;
+  height: 100%;
+  cursor: pointer;
   border-radius: $border-radius;
-  margin: 10px 20px 15px 8px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  // margin: 10px;
+  // margin: 10px 20px 15px 8px;
+  // overflow: hidden;
+  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px -1px;
+  //   height: 550px;
+  // flex-basis: 20%;
+  // -ms-flex: auto;
+  // width: 259px;
+  // position: relative;
+  // padding: 10px;
+  // box-sizing: border-box;
 
   &__header {
     position: relative;
+    margin-bottom: 10px;
 
     .date-pill {
       position: absolute;
@@ -122,17 +146,44 @@ export default {
     }
     img {
       filter: brightness(0.7);
-      max-height: 150px;
+      max-height: 200px;
       object-fit: cover;
       width: 100%;
-      height: 100%;
+      height: 200px;
       border-top-left-radius: $border-radius;
       border-top-right-radius: $border-radius;
+    }
+
+    .play-wrapper {
+      height: 80px;
+      width: 80px;
+      margin: auto;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      .play-icon {
+        height: 80px;
+        cursor: pointer;
+        opacity: 0.8;
+
+        .primary {
+          fill: $primary;
+        }
+
+        .secondary {
+          fill: white;
+        }
+
+        &:hover {
+          .primary {
+            fill: $primary-dark;
+          }
+        }
+      }
     }
   }
 
   &__body {
-    padding: $standard-padding;
+    padding: 0 20px 20px 20px;
 
     .title-row {
       display: flex;
@@ -143,7 +194,7 @@ export default {
         margin-top: 0px;
         color: $primary;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 24px;
         margin-bottom: 5px !important;
       }
 
@@ -160,23 +211,6 @@ export default {
       margin-bottom: 15px;
       margin-top: 0 !important;
       color: $gray-400;
-    }
-
-    .play-wrapper {
-      height: 50px;
-      width: 50px;
-      .play-icon {
-        height: 50px;
-        cursor: pointer;
-
-        .primary {
-          fill: $primary;
-        }
-
-        .secondary {
-          fill: white;
-        }
-      }
     }
   }
 }

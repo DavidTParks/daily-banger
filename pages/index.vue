@@ -1,6 +1,6 @@
 <template>
   <div class="container" :class="{'nav-drawer-opened' : openNav}">
-    <SearchBar @searchUpdated="updateSearch"/>
+    <!-- <SearchBar @searchUpdated="updateSearch"/> -->
     <BangerList 
     class="animated fadeIn faster main-content" 
     :bangers="filterBangers"
