@@ -112,7 +112,7 @@ export default {
       padding-bottom: 5px;
       background: $primary-700;
       font-weight: bold;
-      border-radius: 25px;
+      border-radius: $border-radius;
       box-shadow: 0 1px 3px hsla(0, 0%, 0, 0.2);
       font-size: 12px;
       color: $primary-darkest;
@@ -133,13 +133,13 @@ export default {
       padding-bottom: 5px;
       background: black;
       font-weight: bold;
-      border-radius: 25px;
+      border-radius: $border-radius;
       box-shadow: 0 1px 3px hsla(0, 0%, 0, 0.2);
       font-size: 12px;
       color: white;
 
       span {
-        ont-size: 12px;
+        font-size: 12px;
       }
     }
     img {

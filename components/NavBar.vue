@@ -11,8 +11,9 @@
         <a class="signup">Sign Up</a>
         <IconMenu/>
       </li> -->
-      <li class="navbar-item">
-        <a class="signup-button">Sign Up</a>
+      <li class="navbar-item links">
+        <a class="login-button">Login</a>
+        <a class="signup-button">Sign up</a>
       </li>
     </ul>
   </div>
@@ -62,9 +63,14 @@ export default {
     flex-direction: row;
     list-style: none;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     width: 100%;
     padding-left: 0 !important;
+
+    .navbar-links {
+      display: flex;
+      justify-content: flex-end;
+    }
 
     .site-title {
       font-size: 26px;
@@ -81,19 +87,36 @@ export default {
       font-size: 20px;
       font-weight: 600;
       color: white;
-      // text-transform: uppercase;
+      flex: 1;
       cursor: pointer;
       display: flex;
       align-items: center;
-
-      .signup-button {
-
-      }
 
       .daily-banger-title {
         margin-left: -100px;
         font-size: 32px;
 
+      }
+
+      &.links {
+        justify-content: flex-end;
+
+        a {
+          margin-right: 30px;
+          font-size: 16px;
+        }
+
+        .signup-button {
+          font-size: 14px;
+          padding: 10px;
+          background: $primary-darkest;
+          border-radius: $border-radius;
+          box-shadow: $button-box-shadow;
+        }
+      }
+
+      &.logo {
+        justify-content: center;
       }
 
       &:hover {
