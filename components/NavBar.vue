@@ -46,7 +46,7 @@ export default {
 .navbar {
   width: 100vw;
   background: $primary;
-  max-height: 100px;
+  max-height: 80px;
   position: relative;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@ export default {
 
   .logo {
     width: auto;
-    height: 100px;
+    height: 80px;
     object-fit: contain;
   }
 
