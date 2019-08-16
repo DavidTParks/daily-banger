@@ -7,8 +7,12 @@
         <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/><span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
       </li>
-      <li class="hamburger-menu" @click="openNavDrawer">
+      <!-- <li class="hamburger-menu" @click="openNavDrawer">
+        <a class="signup">Sign Up</a>
         <IconMenu/>
+      </li> -->
+      <li class="navbar-item">
+        <a class="signup-button">Sign Up</a>
       </li>
     </ul>
   </div>
@@ -42,7 +46,7 @@ export default {
   width: 100vw;
   background: $primary;
   max-height: 60px;
-  position: sticky;
+  position: relative;
   display: flex;
   align-items: center;
   // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
@@ -51,7 +55,6 @@ export default {
     width: auto;
     height: 60px;
     object-fit: contain;
-    margin-right: 15px;
   }
 
   .navbar-items {
@@ -82,6 +85,10 @@ export default {
       cursor: pointer;
       display: flex;
       align-items: center;
+
+      .signup-button {
+
+      }
 
       .daily-banger-title {
         margin-left: -100px;

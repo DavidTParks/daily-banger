@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <p class="site-footer">© The Daily Banger</p>
+        <!-- <p class="site-footer">© The Daily Banger</p> -->
     </div>
 </template>
 
