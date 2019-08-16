@@ -99,9 +99,11 @@ export default {
                 align-items: center;
 
                 img {
-                    margin-right: 15px;
+                    // margin-right: 15px;
+                    padding-right: 15px;
                     height: 40px;
                     width: 40px;
+                    object-fit: contain;
                 }
 
                 p {

@@ -45,6 +45,36 @@ export default {
         }
       }`
   },
+  head() {
+    return {
+        title: 'The Daily Banger',
+        meta: [{
+            hid: 'description',
+            name: 'description',
+            content: 'A fire song every day.'
+        }, {
+            hid: 'twitter:card',
+            name: 'twitter:card',
+            content: `The Daily Banger`
+        }, {
+            hid: 'twitter:title',
+            name: 'twitter:title',
+            content: `The Daily Banger`
+        }, {
+            hid: 'twitter:description',
+            name: 'twitter:description',
+            content: 'A fire song every day.'
+        }, {
+            hid: 'og:title',
+            name: 'og:title',
+            content: `The Daily Banger`
+        }, {
+            hid: 'og:description',
+            name: 'og:description',
+            content: 'A fire song every day.'
+        }]
+    };
+  },
   data() {
     return {
       searchTerm: '',
