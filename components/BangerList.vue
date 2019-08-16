@@ -33,6 +33,6 @@ export default {
 @import "~/assets/sass/variables.scss";
 
 .banger-list-wrapper {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 </style>
