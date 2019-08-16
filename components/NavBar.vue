@@ -7,12 +7,12 @@
         <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/><span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
       </li>
-      <!-- <li class="hamburger-menu" @click="openNavDrawer">
-        <a class="signup">Sign Up</a>
+      <li class="navbar-item hamburger-menu" @click="openNavDrawer">
+        <!-- <a class="signup">Sign Up</a> -->
         <IconMenu/>
-      </li> -->
+      </li>
       <li class="navbar-item links">
-        <a class="login-button">Login</a>
+        <!-- <a class="login-button">Login</a> -->
         <a class="signup-button">Sign up</a>
       </li>
     </ul>
@@ -136,12 +136,19 @@ export default {
 
     .hamburger-menu {
       height: 30px;
+      display: none;
       width: 30px;
       float: right;
       fill: white;
-      padding-right: 15px;
       cursor: pointer;
+
+      svg {
+        width: 30px;
+        margin-left: auto;
+        margin-right: 15px;
+      }
     }
   }
+
 }
 </style>

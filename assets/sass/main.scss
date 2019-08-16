@@ -69,3 +69,17 @@ select {
     flex-basis: 100%;
   }
 }
+
+@media(max-width: 555px) {
+  .hamburger-menu {
+    display: unset !important;
+    display:flex !important;
+    svg {
+      margin-left: auto;
+    }
+  }
+
+  .links {
+    display: none !important;
+  }
+}
