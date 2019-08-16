@@ -2,7 +2,7 @@
   <div class="navbar">
     <ul class="navbar-items">
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
-      <li class="navbar-item"></li>
+      <li class="navbar-item first"></li>
       <li class="navbar-item logo">
         <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/><span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
@@ -46,7 +46,7 @@ export default {
 .navbar {
   width: 100vw;
   background: $primary;
-  max-height: 60px;
+  max-height: 100px;
   position: relative;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@ export default {
 
   .logo {
     width: auto;
-    height: 60px;
+    height: 100px;
     object-fit: contain;
   }
 
@@ -73,7 +73,7 @@ export default {
     }
 
     .site-title {
-      font-size: 26px;
+      font-size: 36px;
       font-weight: 900;
       white-space: nowrap;
       overflow: hidden;
@@ -150,5 +150,14 @@ export default {
     }
   }
 
+}
+@media(max-width: 650px) {
+  .navbar {
+    .navbar-items {
+      .first {
+        display: none !important;
+      }
+    }
+  }
 }
 </style>
