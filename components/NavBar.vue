@@ -167,11 +167,16 @@ export default {
     and (device-height : 736px)  { 
 
       .navbar {
-        max-height: 60px;
-      }
-      .logo {
-        height: 60px;
+        max-height: 60px !important;
 
+        .logo {
+          height: 60px !important;
+
+        }
+
+        .site-title {
+          font-size: 26px !important;
+        }
       }
 }
 </style>
