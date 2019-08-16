@@ -160,4 +160,18 @@ export default {
     }
   }
 }
+
+
+@media only screen 
+    and (device-width : 414px) 
+    and (device-height : 736px)  { 
+
+      .navbar {
+        max-height: 60px;
+      }
+      .logo {
+        height: 60px;
+
+      }
+}
 </style>
