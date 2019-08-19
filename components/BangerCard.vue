@@ -2,7 +2,7 @@
 <div class="grid-item" @click="togglePlay(banger)">
   <div class="banger-card">
     <div class="banger-card__header">
-      <img :src="`${banger.songImage.url}?w=500&q=70&auto=compress&fm=webp`">
+      <img :src="`${banger.songImage.url}?w=500&q=70&auto=format`">
       <div class="date-pill">
         <span>{{ 
           `${new Date(banger.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.date).getDate() + 1}, ${new Date(banger.date).getFullYear()}` 
