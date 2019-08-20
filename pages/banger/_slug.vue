@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-      <h1>{{banger.songTitle}}</h1>
+  <div class="container" v-if="banger">
+    <h1>{{banger.songTitle}}</h1>
+    <h2>{{banger.artist}}</h2>
+    <h3>{{banger.genre}}</h3>
   </div>
 </template>
 
@@ -9,11 +11,20 @@ import gql from 'graphql-tag'
 export default {
   apollo: {
     banger: {
-      query: gql`query Banger($slug: String!) {
+      query: gql`query banger($slug: String!) {
         banger(filter: {urlSlug: {
           eq: $slug
         } }) {
+          artist
+          date
+          id
           songTitle
+          songImage {
+            url
+          }
+          soundcloudLink
+          urlSlug
+          genre
         }
       }`,
       preFetch({ route }) {
@@ -23,21 +34,22 @@ export default {
       },
       variables() {
         return {
-          slug: this.$route.params.slug
+          slug: this.slug
         }
+      },
+      result({data}) {
+        console.log(data);
       }
-    }
-  },
-  data() {
-    return {
     }
   },
   mounted: function() {
     
   },
-  methods: {
-
-  },
+  data() {
+    return {
+      slug: this.$route.params.slug
+    }
+  }
 };
 </script>
 
