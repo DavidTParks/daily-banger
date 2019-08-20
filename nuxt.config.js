@@ -21,6 +21,14 @@ module.exports = {
       { rel: 'stylesheet', type: "text/css", href: "https://cdn.jsdelivr.net/npm/animate.css@3.5.1" },
     ]
   },
+  generate: {
+    routes: [
+      '/banger/last_to_leave_louis_the_child',
+      '/banger/troyboi_warlordz_skrillex',
+      '/banger/get_free_major_lazer',
+      '/banger/jpeg_mafia_baby_im_bleeding',
+    ]
+  },
   /*
   ** Customize the progress-bar color
   */
