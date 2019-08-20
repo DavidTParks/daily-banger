@@ -1,12 +1,13 @@
 <template>
   <div class="grid-row banger-list-wrapper">
-    <BangerCard
-    @play-song="emitUrl"
-    v-for="(banger, index) in bangers"
-    :key="banger.id"
-    :banger="banger"
-    >
-    </BangerCard>
+    <template v-for="(banger, index) in bangers">
+        <BangerCard
+        @play-song="emitUrl"
+        :key="banger.id"
+        :banger="banger"
+        >
+        </BangerCard>
+    </template>
   </div>
 </template>
 

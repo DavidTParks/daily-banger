@@ -4,7 +4,8 @@
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
       <li class="navbar-item first"></li>
       <li class="navbar-item logo">
-        <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/><span class="site-title">The Daily Banger</span>
+        <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/>
+        <span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
       </li>
       <li class="navbar-item hamburger-menu" @click="openNavDrawer">
@@ -23,12 +24,14 @@
 import LaunchIcon from "~/assets/svg/icon-launch.svg";
 import DailyBangerLogo from "~/assets/svg/SVGLogo.svg";
 import IconMenu from "~/assets/svg/icon-menu.svg";
+import SkullGuy from "~/assets/svg/SVGLogo.svg";
 export default {
   name: "nav-bar",
   components: {
     LaunchIcon,
     DailyBangerLogo,
-    IconMenu
+    IconMenu,
+    SkullGuy
   },
   mounted: function() {
     console.log("Mounted");

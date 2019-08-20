@@ -21,7 +21,11 @@
           <h1 class="title">{{banger.songTitle}}</h1>
       </div>
       <h3 class="artist">{{banger.artist}}</h3>
-      <!-- <img src="https://developers.soundcloud.com/assets/logo_big_black-4fbe88aa0bf28767bbfc65a08c828c76.png"/> -->
+    </div>
+    <div class="banger-card__footer">
+      <nuxt-link :to="`/banger/${banger.urlSlug}`" title="Read More">
+        <span>Read More</span>
+      </nuxt-link>
     </div>
   </div>
 </div>
@@ -30,11 +34,13 @@
 <script>
 import IconPlay from "~/assets/svg/icon-play.svg";
 import IconPause from "~/assets/svg/icon-pause.svg";
+import IconNews from "~/assets/svg/icon-external-window.svg"
 export default {
   name: 'banger-card',
   components: {
     IconPlay,
-    IconPause
+    IconPause,
+    IconNews
   },
   props: [
     'banger'
@@ -90,7 +96,7 @@ export default {
   position: relative;
   z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px -1px;
-  transition: all .2s;
+  transition: all .3s ease;
 
   &:hover {
     transform: translateY(-5px);
@@ -100,7 +106,6 @@ export default {
 
   &__header {
     position: relative;
-    margin-bottom: 10px;
 
     .date-pill {
       position: absolute;
@@ -144,6 +149,7 @@ export default {
     }
     img {
       filter: brightness(0.7);
+      vertical-align: middle;
       max-height: 200px;
       object-fit: cover;
       width: 100%;
@@ -181,7 +187,8 @@ export default {
   }
 
   &__body {
-    padding: 0 20px 20px 20px;
+    padding: 15px;
+    height: 100px;
 
     .title-row {
       display: flex;
@@ -209,6 +216,41 @@ export default {
       margin-bottom: 15px;
       margin-top: 0 !important;
       color: $gray-400;
+    }
+    
+  }
+
+  &__footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+
+    a {
+      flex-grow: 1;
+      height: 100%;
+      color: #002d4d;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      transition: all 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background: black;
+
+        span {
+          color: white;
+        }
+      }
+
+      span {
+        color: $primary;
+      }
     }
   }
 }
