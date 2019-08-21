@@ -11,5 +11,13 @@
 </style>
 <script>
 export default {
+    head () {
+        return {
+            title: 'About Us - The Daily Banger',
+            meta: [
+                { hid: 'description', name: 'description', content: 'About The Daily Banger' }
+            ]
+        }
+    }
 };
 </script>
