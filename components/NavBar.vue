@@ -4,7 +4,11 @@
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
       <li class="navbar-item first"></li>
       <li class="navbar-item logo">
-        <img class="logo" src="~/assets/logo/400dpiLogoCropped.png"/>
+        <picture>
+          <source srcset="~/assets/logo/400dpiLogoCropped.webp" type="image/webp">
+          <img class="logo" src="~/assets/logo/400dpiLogoCropped.png" alt="Alt Text!">
+        </picture>
+        <!-- <img class="logo" src="~/assets/logo/400dpiLogoCropped.webp"/> -->
         <span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
       </li>
