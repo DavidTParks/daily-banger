@@ -46,7 +46,7 @@ export default {
         {
           hid: `keywords`,
           name: 'keywords',
-          keywords: `${this.songTitle}, ${this.artist}, ${this.genre}`
+          content: `${this.songTitle}, ${this.artist}, ${this.genre}`
         }
       ]
     }
