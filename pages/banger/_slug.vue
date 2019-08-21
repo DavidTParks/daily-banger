@@ -22,7 +22,7 @@ export default {
     return {
     title: `${this.banger.songTitle} by ${this.banger.artist} - The Daily Banger`,
       meta: [
-        { hid: 'description', name: 'description', content: banger.articleContent },
+        { hid: 'description', name: 'description', content: this.banger.articleContent },
         {
           hid: `keywords`,
           name: 'keywords',
