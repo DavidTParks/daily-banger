@@ -47,7 +47,13 @@ export default {
           hid: `keywords`,
           name: 'keywords',
           content: `${this.songTitle}, ${this.artist}, ${this.genre}`
-        }
+        },
+        { name: 'twitter:card', content: 'summary_large_image'},
+        { name: 'twitter:site', content: '@twitter' },
+        { name: 'twitter:title', content: `${this.songTitle} by ${this.artist} - The Daily Banger` },
+        { name: 'twitter:description', content: this.articleContent },
+        { name: 'twitter:image', content: `${this.songImage}` },
+        { name: 'twitter:image:alt', content: `Song cover for ${banger.songTitle} by ${banger.artist}` }
       ]
     }
   },
