@@ -74,7 +74,6 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-   extractCSS: true,
     extend(config, ctx) {
       const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
 
