@@ -10,7 +10,7 @@
                 <h5 class="article-date">{{ `${new Date(date).toLocaleString('default', {month: 'long'})} ${new Date(date).getDate() + 1}, ${new Date(date).getFullYear()}` }}</h5>
                 <h5 class="article-genre-pill">{{genre}}</h5>
             </div>
-            <img class="article-image" :src="`${songImage.url}?w=668&auto=format`"/>
+            <img class="article-image" :src="`${songImage.url}?w=668&h=300&auto=format`"/>
             <p class="article-content">{{articleContent}}</p>
             <div class="play-song-row">
                 <a>
