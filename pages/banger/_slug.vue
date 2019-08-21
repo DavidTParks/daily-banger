@@ -33,7 +33,7 @@ export default {
         { name: 'og:description', content: this.banger.articleContent },
         { name: 'og:image', content: this.banger.songImage.url },
         { name: 'og:url', content: `https://www.thedailybanger.com/banger/${this.$route.params.slug}` },
-        { name: 'og:type', content: 'website' },
+        { name: 'og:type', content: 'article' },
 
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image'},
