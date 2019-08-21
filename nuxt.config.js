@@ -10,8 +10,12 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'A curated song every day. Always fire.' },
-      { hid: 'keywords', name: 'keywords', content: 'music, music blog, electronic music, EDM, hip-hop, blog' }
-
+      { hid: 'keywords', name: 'keywords', content: 'music, music blog, electronic music, EDM, hip-hop, blog' },
+      //Open Graph
+      { name: 'og:title', content: `The Daily Banger - A Fire Song Every Day` },
+      { name: 'og:description', content: 'Curating the best possible music every single day, no matter what.' },
+      { name: 'og:url', content: `https://www.thedailybanger.com/banger/` },
+      { name: 'og:type', content: 'website' },
     ],
     script: [
       { src: 'https://kit.fontawesome.com/215417b77b.js' },
