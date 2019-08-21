@@ -225,7 +225,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f0f0f0;
+    background: $primary-darkest;
 
     a {
       flex-grow: 1;
@@ -249,7 +249,7 @@ export default {
       }
 
       span {
-        color: $primary;
+        color: white;
       }
     }
   }

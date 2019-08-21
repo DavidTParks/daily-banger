@@ -3,6 +3,7 @@
     <h1>{{banger.songTitle}}</h1>
     <h2>{{banger.artist}}</h2>
     <h3>{{banger.genre}}</h3>
+    <p>{{banger.articleContent}}</p>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
             url
           }
           soundcloudLink
+          articleContent
           urlSlug
           genre
         }

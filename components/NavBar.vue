@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <nav class="navbar">
     <ul class="navbar-items">
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
       <li class="navbar-item first"></li>
@@ -17,7 +17,7 @@
         <a class="signup-button">Sign up</a>
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <script>

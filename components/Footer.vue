@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="site_footer">
         <div class="play-bar">
             <div class="play-controls">
                 <div class="now-playing">
@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss">
 @import "~/assets/sass/variables.scss";
-.footer {
+.site_footer {
     width: 100vw;
     position: fixed;
     bottom: 0;
