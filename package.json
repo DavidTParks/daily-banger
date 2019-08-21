@@ -19,6 +19,7 @@
     "express": "^4.16.4",
     "graphql-tag": "^2.10.1",
     "nuxt": "^2.0.0",
+    "nuxt-purgecss": "^0.2.1",
     "sass-loader": "^7.1.0"
   },
   "devDependencies": {

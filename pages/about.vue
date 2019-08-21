@@ -5,7 +5,6 @@
     <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing ...</p>
     <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing ...</p>
     <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing ...</p>
-    ...
   </div>
 </template>
 <style>
