@@ -1,8 +1,9 @@
 <template>
   <div class="container" v-if="banger">
+    <h5>{{banger.date}}</h5>
+    <h5>{{banger.genre}}</h5>
     <h1>{{banger.songTitle}}</h1>
     <h2>{{banger.artist}}</h2>
-    <h3>{{banger.genre}}</h3>
     <p>{{banger.articleContent}}</p>
   </div>
 </template>
@@ -44,6 +45,7 @@ export default {
       }
     }
   },
+  layout: 'default',
   mounted: function() {
     
   },
@@ -52,7 +54,7 @@ export default {
       slug: this.$route.params.slug
     }
   }
-};
+}
 </script>
 
 <style lang="scss">

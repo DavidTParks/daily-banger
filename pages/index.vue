@@ -5,8 +5,6 @@
     class="animated fadeIn faster main-content" 
     :bangers="filterBangers"
     ></BangerList>
-    <SoundcloudPlayer
-    />
   </div>
 </template>
 

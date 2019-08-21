@@ -70,11 +70,12 @@ export default {
     width: 100vw;
     position: fixed;
     bottom: 0;
-    min-height: 90px;
+    min-height: 80px;
     background: $gray-100;
     // display: flex;
     // justify-content: center;
     align-items: center;
+    z-index: 2;
 
     .play-bar {
         padding: 15px;
