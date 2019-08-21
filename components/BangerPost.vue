@@ -39,7 +39,7 @@ export default {
   name: 'banger-post',
   head () {
     return {
-        
+
     }
   },
   components: {
@@ -87,6 +87,7 @@ export default {
         box-shadow: $content-box-shadow;
 
         .article-header {
+            margin-top: 0 !important;
             color: $primary-darkest;
             font-size: $aticle-headline-size;
             font-family: $article-headline-font !important;
