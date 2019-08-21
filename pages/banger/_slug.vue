@@ -20,28 +20,28 @@ export default {
   },
   head () {
     return {
-    title: `${banger.songTitle} by ${banger.artist} - The Daily Banger`,
+    title: `${this.banger.songTitle} by ${this.banger.artist} - The Daily Banger`,
       meta: [
         { hid: 'description', name: 'description', content: banger.articleContent },
         {
           hid: `keywords`,
           name: 'keywords',
-          content: `${banger.songTitle}, ${banger.artist}, ${banger.genre}`
+          content: `${this.banger.songTitle}, ${this.banger.artist}, ${this.banger.genre}`
         },
         //Open Graph
-        { name: 'og:title', content: `${banger.songTitle} by ${banger.artist} - The Daily Banger` },
-        { name: 'og:description', content: banger.articleContent },
-        { name: 'og:image', content: banger.songImage },
+        { name: 'og:title', content: `${this.banger.songTitle} by ${this.banger.artist} - The Daily Banger` },
+        { name: 'og:description', content: this.banger.articleContent },
+        { name: 'og:image', content: this.banger.songImage },
         { name: 'og:url', content: `https://www.thedailybanger.com/${this.$route.params.slug}` },
         { name: 'og:type', content: 'website' },
 
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image'},
         { name: 'twitter:site', content: '@twitter' },
-        { name: 'twitter:title', content: `${banger.songTitle} by ${banger.artist} - The Daily Banger` },
-        { name: 'twitter:description', content: banger.articleContent },
-        { name: 'twitter:image', content: `${banger.songImage}` },
-        { name: 'twitter:image:alt', content: `Song cover for ${banger.songTitle} by ${banger.artist}` }
+        { name: 'twitter:title', content: `${this.banger.songTitle} by ${this.banger.artist} - The Daily Banger` },
+        { name: 'twitter:description', content: this.banger.articleContent },
+        { name: 'twitter:image', content: `${this.banger.songImage}` },
+        { name: 'twitter:image:alt', content: `Song cover for ${this.banger.songTitle} by ${this.banger.artist}` }
       ]
     }
   },
