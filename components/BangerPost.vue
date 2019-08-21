@@ -84,7 +84,7 @@ export default {
         .article-header {
             color: $primary-darkest;
             font-size: $aticle-headline-size;
-            font-family: $article-headline-font;
+            font-family: $article-headline-font !important;
             line-height: $article-headline-line-height;
             font-weight: $article-headline-font-weight;
         }
