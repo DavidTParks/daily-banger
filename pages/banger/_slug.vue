@@ -20,27 +20,27 @@ export default {
   },
   head () {
     return {
-    title: `${this.songTitle} by ${this.artist} - The Daily Banger`,
+    title: `${banger.songTitle} by ${banger.artist} - The Daily Banger`,
       meta: [
-        { hid: 'description', name: 'description', content: this.articleContent },
+        { hid: 'description', name: 'description', content: banger.articleContent },
         {
           hid: `keywords`,
           name: 'keywords',
-          content: `${this.songTitle}, ${this.artist}, ${this.genre}`
+          content: `${banger.songTitle}, ${banger.artist}, ${banger.genre}`
         },
         //Open Graph
-        { name: 'og:title', content: `${this.songTitle} by ${this.artist} - The Daily Banger` },
-        { name: 'og:description', content: this.articleContent },
-        { name: 'og:image', content: this.songImage },
+        { name: 'og:title', content: `${banger.songTitle} by ${banger.artist} - The Daily Banger` },
+        { name: 'og:description', content: banger.articleContent },
+        { name: 'og:image', content: banger.songImage },
         { name: 'og:url', content: `https://www.thedailybanger.com/${this.$route.params.slug}` },
         { name: 'og:type', content: 'website' },
 
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image'},
         { name: 'twitter:site', content: '@twitter' },
-        { name: 'twitter:title', content: `${this.songTitle} by ${this.artist} - The Daily Banger` },
-        { name: 'twitter:description', content: this.articleContent },
-        { name: 'twitter:image', content: `${this.songImage}` },
+        { name: 'twitter:title', content: `${banger.songTitle} by ${banger.artist} - The Daily Banger` },
+        { name: 'twitter:description', content: banger.articleContent },
+        { name: 'twitter:image', content: `${banger.songImage}` },
         { name: 'twitter:image:alt', content: `Song cover for ${banger.songTitle} by ${banger.artist}` }
       ]
     }
