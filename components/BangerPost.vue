@@ -37,26 +37,6 @@ import FastForward from "~/assets/svg/icon-fast-forward.svg";
 import FastRewind from "~/assets/svg/icon-fast-rewind.svg"; 
 export default {
   name: 'banger-post',
-  head () {
-    return {
-    title: `${this.songTitle} by ${this.artist} - The Daily Banger`,
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: 'description', content: this.articleContent },
-        {
-          hid: `keywords`,
-          name: 'keywords',
-          content: `${this.songTitle}, ${this.artist}, ${this.genre}`
-        },
-        { name: 'twitter:card', content: 'summary_large_image'},
-        { name: 'twitter:site', content: '@twitter' },
-        { name: 'twitter:title', content: `${this.songTitle} by ${this.artist} - The Daily Banger` },
-        { name: 'twitter:description', content: this.articleContent },
-        { name: 'twitter:image', content: `${this.songImage}` },
-        { name: 'twitter:image:alt', content: `Song cover for ${banger.songTitle} by ${banger.artist}` }
-      ]
-    }
-  },
   components: {
     IconPlay
   },

@@ -18,6 +18,33 @@ export default {
   components: {
     BangerPost
   },
+  head () {
+    return {
+    title: `${this.songTitle} by ${this.artist} - The Daily Banger`,
+      meta: [
+        { hid: 'description', name: 'description', content: this.articleContent },
+        {
+          hid: `keywords`,
+          name: 'keywords',
+          content: `${this.songTitle}, ${this.artist}, ${this.genre}`
+        },
+        //Open Graph
+        { name: 'og:title', content: `${this.songTitle} by ${this.artist} - The Daily Banger` },
+        { name: 'og:description', content: this.articleContent },
+        { name: 'og:image', content: this.songImage },
+        { name: 'og:url', content: `https://www.thedailybanger.com/${this.$route.params.slug}` },
+        { name: 'og:type', content: 'website' },
+
+        // Twitter Card
+        { name: 'twitter:card', content: 'summary_large_image'},
+        { name: 'twitter:site', content: '@twitter' },
+        { name: 'twitter:title', content: `${this.songTitle} by ${this.artist} - The Daily Banger` },
+        { name: 'twitter:description', content: this.articleContent },
+        { name: 'twitter:image', content: `${this.songImage}` },
+        { name: 'twitter:image:alt', content: `Song cover for ${banger.songTitle} by ${banger.artist}` }
+      ]
+    }
+  },
   apollo: {
     banger: {
       query: gql`query banger($slug: String!) {
