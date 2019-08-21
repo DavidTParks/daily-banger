@@ -40,7 +40,7 @@ export default {
         { name: 'twitter:site', content: '@twitter' },
         { name: 'twitter:title', content: `${this.banger.songTitle} by ${this.banger.artist} - The Daily Banger` },
         { name: 'twitter:description', content: this.banger.articleContent },
-        { name: 'twitter:image', content: `${this.banger.songImage}` },
+        { name: 'twitter:image', content: this.banger.songImage },
         { name: 'twitter:image:alt', content: `Song cover for ${this.banger.songTitle} by ${this.banger.artist}` }
       ]
     }
