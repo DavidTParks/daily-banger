@@ -189,6 +189,7 @@ export default {
   &__body {
     padding: 15px;
     height: 100px;
+    padding-bottom: 0;
 
     .title-row {
       display: flex;
@@ -221,11 +222,11 @@ export default {
   }
 
   &__footer {
-    height: 50px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $primary-darkest;
+    background: $gray-light;
 
     a {
       flex-grow: 1;
@@ -249,7 +250,7 @@ export default {
       }
 
       span {
-        color: white;
+        color: $cyan-300;
       }
     }
   }
