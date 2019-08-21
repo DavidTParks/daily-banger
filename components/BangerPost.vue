@@ -153,6 +153,7 @@ export default {
             align-items: baseline;
 
             .article-genre-pill {
+                box-shadow: $button-box-shadow;
                 margin-left: 15px;
                 padding: 10px;
                 padding-top: 5px;
@@ -161,6 +162,10 @@ export default {
                 background: $gray-900;
                 font-size: 14px;
                 border-radius: $border-radius;
+
+                &:hover {
+                    background: $gray-800;
+                }
             }
         }
     }
