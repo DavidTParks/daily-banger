@@ -18,7 +18,6 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/FaviconLogo.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap' },
-      { rel: 'stylesheet', type: "text/css", href: "https://cdn.jsdelivr.net/npm/animate.css@3.5.1" },
     ]
   },
   generate: {
