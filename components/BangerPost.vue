@@ -37,6 +37,11 @@ import FastForward from "~/assets/svg/icon-fast-forward.svg";
 import FastRewind from "~/assets/svg/icon-fast-rewind.svg"; 
 export default {
   name: 'banger-post',
+  head () {
+    return {
+        
+    }
+  },
   components: {
     IconPlay
   },
