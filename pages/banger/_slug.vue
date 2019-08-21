@@ -20,7 +20,7 @@ export default {
   },
   head () {
     return {
-    title: `${this.banger.songTitle} by ${this.banger.artist} - The Daily Banger`,
+      title: `${this.banger.songTitle} by ${this.banger.artist} - The Daily Banger`,
       meta: [
         { hid: 'description', name: 'description', content: this.banger.articleContent },
         {
@@ -32,7 +32,7 @@ export default {
         { name: 'og:title', content: `${this.banger.songTitle} by ${this.banger.artist} - The Daily Banger` },
         { name: 'og:description', content: this.banger.articleContent },
         { name: 'og:image', content: this.banger.songImage.url },
-        { name: 'og:url', content: `https://www.thedailybanger.com/${this.$route.params.slug}` },
+        { name: 'og:url', content: `https://www.thedailybanger.com/banger/${this.$route.params.slug}` },
         { name: 'og:type', content: 'website' },
 
         // Twitter Card
@@ -81,7 +81,7 @@ export default {
   },
   layout: 'default',
   mounted: function() {
-    
+    console.log(`https://www.thedailybanger.com/banger/${this.$route.params.slug}`);
   },
   data() {
     return {
