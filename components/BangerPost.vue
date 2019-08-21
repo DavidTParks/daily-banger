@@ -73,7 +73,8 @@ export default {
     flex-flow:row wrap;
 
     .article {
-        padding: $standard-padding;
+        // border-top: 8px solid $primary-600;
+        padding: 24px;
         background: white;
         border-radius: $border-radius;
         flex-basis: 50%;
@@ -90,12 +91,12 @@ export default {
 
         .article-subtitle {
             font-weight: 600;
-             color: $gray-300;
+             color: $primary-dark;
              font-size: 30px;
         }
 
         .article-date {
-            color: $gray-300;
+            color: $gray-500;
             font-size: 16px;
         }
 
@@ -104,7 +105,6 @@ export default {
             width: 100%;
             object-fit: cover;
             margin-top: 10px;
-            margin-bottom: 20px;
         }
         
 
@@ -113,7 +113,7 @@ export default {
             line-height: $article-content-line-height;
             color: $article-content-font-color;
             font-weight: $article-content-font-weight;
-            // margin-bottom: 50px;
+            margin-bottom: 24px;
         }
 
         .play-song-row {
