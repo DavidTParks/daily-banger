@@ -9,7 +9,9 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'A curated song every day, always fire.' }
+      { hid: 'description', name: 'description', content: 'A curated song every day. Always fire.' },
+      { hid: 'keywords', name: 'keywords', content: 'music, music blog, electronic music, EDM, hip-hop, blog' }
+
     ],
     script: [
       { src: 'https://kit.fontawesome.com/215417b77b.js' },

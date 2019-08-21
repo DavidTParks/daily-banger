@@ -39,10 +39,15 @@ export default {
   name: 'banger-post',
   head () {
     return {
-    title: `${this.songTitle} - The Daily Banger`,
+    title: `${this.songTitle} by ${this.artist} - The Daily Banger`,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: 'description', content: this.articleContent }
+        { hid: 'description', name: 'description', content: this.articleContent },
+        {
+          hid: `keywords`,
+          name: 'keywords',
+          keywords: `${this.songTitle}, ${this.artist}, ${this.genre}`
+        }
       ]
     }
   },
