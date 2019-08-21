@@ -63,11 +63,16 @@ module.exports = {
   modules: [
     '@nuxtjs/apollo',
     'nuxt-purgecss',
+    '@nuxtjs/sitemap'
   ],
   apollo: {
     clientConfigs: {
       default: '~/apollo/config.js'
     }
+  },
+  sitemap: {
+    hostname: 'https://thedailybanger.com',
+    gzip: true,
   },
   /*
   ** Build configuration
