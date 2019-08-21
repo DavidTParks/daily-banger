@@ -5,7 +5,7 @@
       <li class="navbar-item first"></li>
       <li class="navbar-item logo">
         <picture>
-          <source srcset="~/assets/logo/400dpiLogoCropped.webp" type="image/webp">
+          <source srcset="../assets/logo/400dpiLogoCropped.webp" type="image/webp">
           <img class="logo" src="~/assets/logo/400dpiLogoCropped.png" alt="Alt Text!">
         </picture>
         <!-- <img class="logo" src="~/assets/logo/400dpiLogoCropped.webp"/> -->
