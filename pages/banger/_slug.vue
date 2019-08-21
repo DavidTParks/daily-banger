@@ -1,16 +1,23 @@
 <template>
   <div class="container" v-if="banger">
-    <h5>{{banger.date}}</h5>
-    <h5>{{banger.genre}}</h5>
-    <h1>{{banger.songTitle}}</h1>
-    <h2>{{banger.artist}}</h2>
-    <p>{{banger.articleContent}}</p>
+      <BangerPost 
+      :songTitle="banger.songTitle"
+      :date="banger.date"
+      :genre="banger.genre"
+      :artist="banger.artist"
+      :article-content="banger.articleContent"
+      :song-image="banger.songImage"
+      />
   </div>
 </template>
 
 <script>
 import gql from 'graphql-tag'
+import BangerPost from "~/components/BangerPost.vue";
 export default {
+  components: {
+    BangerPost
+  },
   apollo: {
     banger: {
       query: gql`query banger($slug: String!) {
