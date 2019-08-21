@@ -4,12 +4,12 @@
 
         </div>
         <div class="article">
+            <h1 class="article-header">{{songTitle}}</h1>
+            <h2 class="article-subtitle">{{artist}}</h2>
             <div class="pill-wrapper">
+                <h5 class="article-date">{{ `${new Date(date).toLocaleString('default', {month: 'long'})} ${new Date(date).getDate() + 1}, ${new Date(date).getFullYear()}` }}</h5>
                 <h5 class="article-genre-pill">{{genre}}</h5>
             </div>
-            <h1 class="article-header">{{songTitle}}</h1>
-            <h2 class="aticle-subtitle">By {{artist}}</h2>
-            <h5 class="article-date">{{ `${new Date(date).toLocaleString('default', {month: 'long'})} ${new Date(date).getDate() + 1}, ${new Date(date).getFullYear()}` }}</h5>
             <img class="article-image" :src="`${songImage.url}?w=668&auto=format`"/>
             <p class="article-content">{{articleContent}}</p>
             <div class="play-song-row">
@@ -81,7 +81,7 @@ export default {
         box-shadow: $content-box-shadow;
 
         .article-header {
-            color: $article-headline-color;
+            color: $primary-darkest;
             font-size: $aticle-headline-size;
             font-family: $article-headline-font;
             line-height: $article-headline-line-height;
@@ -90,26 +90,30 @@ export default {
 
         .article-subtitle {
             font-weight: 600;
+             color: $gray-300;
+             font-size: 30px;
         }
 
-        .article-genre-pill {
-            padding: 10px;
+        .article-date {
+            color: $gray-300;
+            font-size: 16px;
         }
 
         .article-image {
             height: 300px;
             width: 100%;
             object-fit: cover;
-            margin-top: 20px;
+            margin-top: 10px;
             margin-bottom: 20px;
         }
+        
 
         .article-content {
             font-size: $article-content-size;
             line-height: $article-content-line-height;
             color: $article-content-font-color;
             font-weight: $article-content-font-weight;
-            margin-bottom: 50px;
+            // margin-bottom: 50px;
         }
 
         .play-song-row {
@@ -139,11 +143,17 @@ export default {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            align-self: flex-end;
+            align-items: baseline;
 
             .article-genre-pill {
+                margin-left: 15px;
+                padding: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
                 cursor: pointer;
-                background: $gray-light;
-                font-size: 18px;
+                background: $gray-900;
+                font-size: 14px;
                 border-radius: $border-radius;
             }
         }
