@@ -16,11 +16,11 @@
             </picture>
             <!-- <img class="article-image" :src="`${songImage}?w=440&&fm=webp`"/> -->
             <p class="article-content">{{articleContent}}</p>
-            <!-- <div class="play-song-row">
+            <div class="play-song-row">
                 <a>
                 <IconPlay/>
                 </a>
-            </div> -->
+            </div>
         </div>
         <!-- <div class="related-content">
             <h3>Related Content</h3>

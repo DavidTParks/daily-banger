@@ -95,12 +95,12 @@ export default {
   overflow: hidden;
   position: relative;
   z-index: 2;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px -1px;
+  box-shadow: $content-box-shadow;
   transition: all .3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 50px -1px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 60px -1px;
   }
 
 
