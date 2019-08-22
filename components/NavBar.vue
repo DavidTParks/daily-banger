@@ -113,6 +113,7 @@ export default {
         }
 
         .signup-button {
+          display: none;
           font-size: 14px;
           padding: 10px;
           background: $primary-darkest;

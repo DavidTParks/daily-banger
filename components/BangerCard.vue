@@ -9,7 +9,7 @@
           }}</span>
       </div>
       <div class="genre-pill">
-        <!-- <span>{{banger.genre}}</span> -->
+        <span>{{banger.fields.genres[0]}}</span>
       </div>
       <div class="play-wrapper">
         <a v-if="banger.fields.soundcloudLink === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
