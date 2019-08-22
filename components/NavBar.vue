@@ -2,7 +2,7 @@
   <nav class="navbar">
     <ul class="navbar-items">
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
-      <li class="navbar-item first"></li>
+      <!-- <li class="navbar-item first"></li> -->
       <li class="navbar-item logo">
         <picture>
           <source srcset="../assets/logo/400dpiLogoCropped.webp" type="image/webp">
@@ -11,14 +11,6 @@
         <!-- <img class="logo" src="~/assets/logo/400dpiLogoCropped.webp"/> -->
         <span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
-      </li>
-      <li class="navbar-item hamburger-menu" @click="openNavDrawer">
-        <!-- <a class="signup">Sign Up</a> -->
-        <IconMenu/>
-      </li>
-      <li class="navbar-item links">
-        <!-- <a class="login-button">Login</a> -->
-        <a class="signup-button">Sign up</a>
       </li>
     </ul>
   </nav>
@@ -185,5 +177,36 @@ export default {
           font-size: 26px !important;
         }
       }
+}
+
+@media(max-width: 555px) {
+  .hamburger-menu {
+    display: flex !important;
+    svg {
+      margin-left: auto;
+    }
+  }
+}
+
+@media(max-width: 375px) {
+  .hamburger-menu {
+    display: none !important;
+  }
+
+  .navbar {
+    height: 50px !important;
+  }
+
+  .logo {
+    height: 50px !important;
+  }
+
+  .links {
+    display: none !important;
+  }
+
+  .site-title {
+    font-size: 24px !important;
+  }
 }
 </style>
