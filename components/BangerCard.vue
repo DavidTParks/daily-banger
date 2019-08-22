@@ -2,28 +2,28 @@
 <div class="grid-item" @click="togglePlay(banger)">
   <div class="banger-card">
     <div class="banger-card__header">
-      <img :src="`${banger.songImage.url}?w=440&q=70&auto=format`" :alt="`Song cover for ${banger.songTitle} by ${banger.artist}`">
+      <img :src="`${banger.fields.image.fields.file.url}?w=440&&fm=webp`" :alt="`Song cover for ${banger.fields.songTitle} by ${banger.fields.artist}`">
       <div class="date-pill">
         <span>{{ 
-          `${new Date(banger.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.date).getDate() + 1}, ${new Date(banger.date).getFullYear()}` 
+          `${new Date(banger.fields.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.fields.date).getDate() + 1}, ${new Date(banger.fields.date).getFullYear()}` 
           }}</span>
       </div>
       <div class="genre-pill">
-        <span>{{banger.genre}}</span>
+        <!-- <span>{{banger.genre}}</span> -->
       </div>
       <div class="play-wrapper">
-        <a v-if="banger.soundcloudLink === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
+        <a v-if="banger.fields.soundcloudLink === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
         <a v-else @click="playClicked(banger)"><IconPlay class="play-icon"></IconPlay></a>
       </div>
     </div>
     <div class="banger-card__body">
       <div class="title-row">
-          <h1 class="title">{{banger.songTitle}}</h1>
+          <h1 class="title">{{banger.fields.songTitle}}</h1>
       </div>
-      <h3 class="artist">{{banger.artist}}</h3>
+      <h3 class="artist">{{banger.fields.artist}}</h3>
     </div>
     <div class="banger-card__footer">
-      <nuxt-link :to="`/banger/${banger.urlSlug}`" title="Read More">
+      <nuxt-link :to="`/banger/${banger.fields.urlSlug}`" title="Read More">
         <span>Read More</span>
       </nuxt-link>
     </div>
@@ -52,12 +52,12 @@ export default {
   },
   methods : {
     playClicked (banger) {
-      if(this.songUrl === banger.soundcloudLink) {
+      if(this.songUrl === banger.fields.soundcloudLink) {
         this.$store.commit('resumePlay');
       } else {
         this.$store.commit('setSongLoaded', false);
-        this.$store.commit('setSong', banger.soundcloudLink);
-        this.$store.commit('setArtist', banger.artist);
+        this.$store.commit('setSong', banger.fields.soundcloudLink);
+        this.$store.commit('setArtist', banger.fields.artist);
       }
     },
     pauseSong() {

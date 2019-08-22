@@ -1,4 +1,6 @@
 const env = require('dotenv').config();
+const config = require('./contentful.json');
+const contentful = require('contentful')
 module.exports = {
   mode: 'universal',
   /*
@@ -28,12 +30,23 @@ module.exports = {
     ]
   },
   generate: {
-    routes: [
-      '/banger/last_to_leave_louis_the_child',
-      '/banger/troyboi_warlordz_skrillex',
-      '/banger/get_free_major_lazer',
-      '/banger/jpeg_mafia_baby_im_bleeding',
-    ]
+    routes: () => {
+      const client = contentful.createClient({
+        space: config.CTF_SPACE_ID,
+        accessToken: config.CTF_CDA_ACCESS_TOKEN
+      });
+
+      return client.getEntries({
+        content_type: 'bangerPost'
+      }).then((response) => {
+        return response.items.map(entry => {
+          return {
+            route: `/banger/${entry.fields.urlSlug}`,
+            payload: entry
+          };
+        });
+      });
+    }
   },
   /*
   ** Customize the progress-bar color
@@ -59,13 +72,14 @@ module.exports = {
   ** Environment Variables
   */
   env: {
-    datocmsApiKey: process.env.DATO_KEY
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
   },
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/apollo',
     'nuxt-purgecss',
     '@nuxtjs/sitemap'
   ],
@@ -77,6 +91,18 @@ module.exports = {
   sitemap: {
     hostname: 'https://thedailybanger.com',
     gzip: true,
+    routes: () => {
+      const client = contentful.createClient({
+        space: config.CTF_SPACE_ID,
+        accessToken: config.CTF_CDA_ACCESS_TOKEN
+      });
+
+      return client.getEntries({
+        content_type: 'bangerPost'
+      }).then((response) => {
+        return response.items.map(entry => `/banger/${entry.fields.urlSlug}`);
+      });
+    }
   },
   /*
   ** Build configuration
@@ -94,6 +120,10 @@ module.exports = {
         test: /\.svg$/,
         loader: 'vue-svg-loader',
       });
+
+      config.node = {
+        fs: 'empty'
+      }
     },
   }
 }

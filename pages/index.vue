@@ -1,9 +1,8 @@
 <template>
-  <div class="container" :class="{'nav-drawer-opened' : openNav}">
-    <!-- <SearchBar @searchUpdated="updateSearch"/> -->
+  <div class="container">
     <BangerList 
     class="animated fadeIn faster main-content" 
-    :bangers="filterBangers"
+    :bangers="bangers"
     ></BangerList>
   </div>
 </template>
@@ -16,7 +15,6 @@ import SearchBar from "~/components/SearchBar.vue";
 import Footer from "~/components/Footer.vue";
 import SoundcloudPlayer from "~/components/SoundcloudPlayer.vue";
 import Announcement from "~/assets/svg/heroicon-announcement-sm.svg";
-import gql from "graphql-tag";
 export default {
   components: {
     Logo,
@@ -27,69 +25,13 @@ export default {
     SoundcloudPlayer,
     Footer
   },
-  apollo: {
-    allBangers: gql`{
-        allBangers(orderBy: date_DESC) {
-          artist
-          date
-          id
-          songTitle
-          songImage {
-            url
-          }
-          soundcloudLink
-          urlSlug
-          genre
-          articleContent
-        }
-      }`
+  async fetch({ store, params }) {
+    await store.dispatch('bangers/getBangers', params.slug)
   },
   data() {
     return {
-      searchTerm: '',
-      openNav: false,
-      playing: false,
-      player: '',
-      soundcloudUrl: '',
-      song: {
-        cover: '',
-        title: '',
-        artist: '',
-        permalink_url: '',
-        description: '',
-        currentPosition: 0,
-        duration: 0,
-        created_at: '',
-      },
-      bangers: [
-        {
-          title: "Get Free",
-          artist: "Diplo ft. Major Lazer",
-          link: "http://www.youtube.com",
-          posted: "August 12, 2019",
-          genre: "Electronic",
-          img:
-            "https://prettymuchamazing.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_620/MTMwMTU4MTAzNzA1NDU3OTM4/major-lazer.webp"
-        },
-        {
-          title: "Deadmau5",
-          artist: "The Veldt",
-          link: "https://www.youtube.com/watch?v=_esYONwdKuw",
-          genre: "Trance",
-          posted: "August 11, 2019",
-          img:
-            "https://www.billboard.com/files/styles/article_main_image/public/media/deadmau5-2016-billboard-1548.jpg"
-        },
-        {
-          title: "Flume",
-          artist: "Smoke & Retribution",
-          link: "https://www.youtube.com/watch?v=4fAzM5cI5FM",
-          posted: "August 10, 2019",
-          genre: "Electronic",
-          img: "https://i1.sndcdn.com/artworks-000144960640-uux2wb-t500x500.jpg"
-        }
-      ]
-    };
+
+    }
   },
   methods: {
     updateSearch (val) {
@@ -100,13 +42,9 @@ export default {
     },
   },
   computed: {
-    filterBangers: function() {
-      return this.allBangers.filter(banger => {
-        return banger.songTitle.toLowerCase().includes(this.searchTerm.toLowerCase()) 
-            || banger.genre.toLowerCase().includes(this.searchTerm.toLowerCase()) 
-            || banger.artist.toLowerCase().includes(this.searchTerm.toLowerCase());
-      })
-    },
+    bangers() {
+      return this.$store.state.bangers.bangers;
+    }
   },
 };
 </script>
