@@ -2,7 +2,10 @@
 <div class="grid-item" @click="togglePlay(banger)">
   <div class="banger-card">
     <div class="banger-card__header">
-      <img :src="`${banger.fields.image.fields.file.url}?w=440&&fm=webp`" :alt="`Song cover for ${banger.fields.songTitle} by ${banger.fields.artist}`">
+      <picture>
+        <source :srcset="`${banger.fields.image.fields.file.url}?w=440&fm=webp`" type="image/webp">
+        <img :src="`${banger.fields.image.fields.file.url}?w=440`" :alt="`Song cover for ${banger.fields.songTitle} by ${banger.fields.artist}`">
+      </picture>
       <div class="date-pill">
         <span>{{ 
           `${new Date(banger.fields.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.fields.date).getDate() + 1}, ${new Date(banger.fields.date).getFullYear()}` 
