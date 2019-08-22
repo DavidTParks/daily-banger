@@ -10,13 +10,17 @@
                 <h5 class="article-date">{{ `${new Date(date).toLocaleString('default', {month: 'long'})} ${new Date(date).getDate() + 1}, ${new Date(date).getFullYear()}` }}</h5>
                 <h5 class="article-genre-pill">{{genre}}</h5>
             </div>
-            <img class="article-image" :src="`${songImage}?w=440&&fm=webp`"/>
+            <picture>
+                <source :srcset="`${songImage}?w=668&&fm=webp`" type="image/webp">
+                <img class="article-image" :src="`${songImage}?w=668`" :alt="`Article image for ${songTitle} by ${artist}`">
+            </picture>
+            <!-- <img class="article-image" :src="`${songImage}?w=440&&fm=webp`"/> -->
             <p class="article-content">{{articleContent}}</p>
-            <div class="play-song-row">
+            <!-- <div class="play-song-row">
                 <a>
                 <IconPlay/>
                 </a>
-            </div>
+            </div> -->
         </div>
         <!-- <div class="related-content">
             <h3>Related Content</h3>
