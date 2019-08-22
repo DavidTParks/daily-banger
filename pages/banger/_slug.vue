@@ -49,6 +49,7 @@ export default {
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image'},
         { name: 'twitter:site', content: '@twitter' },
+        { name: 'twitter:site', content: '@TheDailyBanger2' },
         { name: 'twitter:title', content: `${this.currentBanger.fields.songTitle} by ${this.currentBanger.fields.artist} - The Daily Banger` },
         { name: 'twitter:description', content: this.currentBanger.fields.articleContent.content[0].content[0].value },
         { name: 'twitter:image', content: this.currentBanger.fields.image.fields.file.url },
