@@ -51,7 +51,6 @@ export default {
 <style lang="scss">
 @import "~/assets/sass/variables.scss";
 .navbar {
-  width: 100vw;
   background: $primary;
   max-height: 80px;
   position: relative;
