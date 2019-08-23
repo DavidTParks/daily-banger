@@ -73,7 +73,7 @@ export default {
     }
 
     .site-title {
-      font-size: 36px;
+      font-size: 30px;
       font-weight: 900;
       white-space: nowrap;
       overflow: hidden;
