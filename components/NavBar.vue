@@ -4,12 +4,14 @@
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
       <!-- <li class="navbar-item first"></li> -->
       <li class="navbar-item logo">
-        <picture>
-          <source srcset="../assets/logo/400dpiLogoCropped.webp" type="image/webp">
-          <img class="logo" src="~/assets/logo/400dpiLogoCropped.png" alt="Alt Text!">
-        </picture>
+         <nuxt-link :to="'/'" title="Read More">
+          <picture>
+            <source srcset="../assets/logo/400dpiLogoCropped.webp" type="image/webp">
+            <img class="logo" src="~/assets/logo/400dpiLogoCropped.png" alt="Alt Text!">
+          </picture>
+          <span class="site-title">The Daily Banger</span>
+         </nuxt-link>
         <!-- <img class="logo" src="~/assets/logo/400dpiLogoCropped.webp"/> -->
-        <span class="site-title">The Daily Banger</span>
         <!-- <DailyBangerLogo class="logo"/> -->
       </li>
     </ul>
@@ -116,6 +118,15 @@ export default {
 
       &.logo {
         justify-content: center;
+        cursor: unset;
+
+        a {
+          color: white;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
       }
 
       &:hover {
