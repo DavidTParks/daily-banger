@@ -12,7 +12,7 @@
           }}</span>
       </div>
       <div class="genre-pill">
-        <span>{{banger.fields.genres[0]}}</span>
+        <span v-if="banger.fields.genres">{{banger.fields.genres[0]}}</span>
       </div>
       <div class="play-wrapper">
         <a v-if="banger.fields.soundcloudLink === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
@@ -237,7 +237,7 @@ export default {
       color: #002d4d;
       font-size: 16px;
       text-decoration: none;
-      color: white;
+      color: $primary-dark;
       text-align: center;
       transition: all 0.2s;
       display: flex;
@@ -253,7 +253,7 @@ export default {
       }
 
       span {
-        color: $cyan-300;
+        color: $primary-dark;
       }
     }
   }

@@ -71,7 +71,7 @@ export default {
     position: fixed;
     bottom: 0;
     min-height: 80px;
-    background: $gray-100;
+    background: $primary-darkest;
     // display: flex;
     // justify-content: center;
     align-items: center;
@@ -80,7 +80,7 @@ export default {
     .play-bar {
         padding: 15px;
         height: 100%;
-        background: $gray-300;
+        background: $gray-100;
         p {
             margin-top: 0;
             margin-bottom: 0;
@@ -115,7 +115,7 @@ export default {
                     color: white;
 
                     span {
-                        color: $cyan-800;
+                        color: $secondary;
                     }
                 }
             }
