@@ -66,6 +66,7 @@ export default {
       this.$store.commit('pauseSong');
     },
     playClicked () {
+      console.log("Play clicked firing");
       if(this.songUrl === this.soundcloudUrl) {
         this.$store.commit('resumePlay');
       } else {

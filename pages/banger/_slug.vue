@@ -1,5 +1,5 @@
 <template>
-  <div class="container" v-if="!isLoading">
+  <div class="container">
       <BangerPost 
       :songTitle="currentBanger.fields.songTitle"
       :date="currentBanger.fields.date"

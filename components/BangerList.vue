@@ -2,7 +2,6 @@
   <div class="grid-row banger-list-wrapper">
     <template v-for="(banger, index) in bangers">
         <BangerCard
-        @play-song="emitUrl"
         :key="banger.id"
         :banger="banger"
         >

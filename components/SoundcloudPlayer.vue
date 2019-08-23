@@ -31,7 +31,6 @@ export default {
         }
     },
     mounted () {
-        console.log("Mounting again")
         const IFrame = document.getElementById('so');
         this.player = SC.Widget(IFrame);
         this.player.bind(SC.Widget.Events.PLAY_PROGRESS, (e) => {
@@ -42,12 +41,10 @@ export default {
         })
     },
     watch : {
-        songCurrentlyPlaying: function(oldVal, newVal) {
-            console.log("songCurrentlyPlaying watcher firing");
+        songCurrentlyPlaying: function(newVal) {
             this.player.load(this.songCurrentlyPlaying);
         },
         songStatus: function(newVal) {
-            console.log("Song status firing");
             if(!newVal) {
                 this.player.pause();
             } else {
@@ -60,19 +57,19 @@ export default {
             setTimeout(this.iFrameLoaded, 1000);
         },
         iFrameLoaded () {
-            console.log("Iframe Loaded firing")
             this.player.getCurrentSound((song) => {
+                console.log(song);
                 this.song = song;
                 this.$store.commit('setSongLoaded', true);
                 this.$store.commit('setSongMetadata', song);
-            })
-            this.player.play();
+                this.player.play();
+            });
         },
     },
     computed: {
         computedUrl () {
             const base = "https://w.soundcloud.com/player/?url=";
-            return base + this.songUrl;
+            return base;
         },
         songCurrentlyPlaying() {
             return this.$store.state.songCurrentlyPlaying;

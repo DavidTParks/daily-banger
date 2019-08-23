@@ -1,5 +1,5 @@
 <template>
-<div class="grid-item" @click="togglePlay(banger)">
+<div class="grid-item">
   <div class="banger-card">
     <div class="banger-card__header">
       <picture>
