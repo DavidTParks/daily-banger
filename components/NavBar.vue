@@ -4,7 +4,7 @@
       <!-- <li class="navbar-item"><LaunchIcon class="logo"/>Discover</li> -->
       <!-- <li class="navbar-item first"></li> -->
       <li class="navbar-item logo">
-         <nuxt-link :to="'/'" title="Read More">
+         <nuxt-link :to="'/'">
           <picture>
             <source srcset="../assets/logo/400dpiLogoCropped.webp" type="image/webp">
             <img class="logo" src="~/assets/logo/400dpiLogoCropped.png" alt="Alt Text!">

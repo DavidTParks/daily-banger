@@ -14,17 +14,16 @@
                 <source :srcset="`${songImage}?w=668&&fm=webp`" type="image/webp">
                 <img class="article-image" :src="`${songImage}?w=668`" :alt="`Article image for ${songTitle} by ${artist}`">
             </picture>
-            <!-- <img class="article-image" :src="`${songImage}?w=440&&fm=webp`"/> -->
             <div class="article-content" v-for="(content, index) in articleContent" :key="index">
               <p>{{content.content[0].value}}</p>
             </div>
-            <div class="play-song-row">
-                <!-- <a>
-                    <IconPlay/>
-                </a> -->
-            <a v-if="soundcloudUrl === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
-            <a v-else @click="playClicked()"><IconPlay class="play-icon"></IconPlay></a>
-            </div>
+            <!-- <div class="play-song-row">
+              <a v-if="soundcloudUrl === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
+              <a v-else @click="playClicked()"><IconPlay class="play-icon"></IconPlay></a>
+            </div> -->
+            <!-- <nuxt-link :to="'/'" class="go-back-button">
+              <Exit/>Back
+            </nuxt-link> -->
         </div>
         <!-- <div class="related-content">
             <h3>Related Content</h3>
@@ -41,13 +40,15 @@
 <script>
 import IconPlay from "~/assets/svg/icon-play.svg"; 
 import IconPause from "~/assets/svg/icon-pause.svg"; 
+import Exit from "~/assets/svg/icon-door-exit.svg"; 
 import FastForward from "~/assets/svg/icon-fast-forward.svg"; 
 import FastRewind from "~/assets/svg/icon-fast-rewind.svg"; 
 export default {
   name: 'banger-post',
   components: {
     IconPlay,
-    IconPause
+    IconPause,
+    Exit
   },
   props: [
       'songTitle', 
@@ -146,6 +147,7 @@ export default {
             width: 100px;
             display: flex;
             flex-direction: row;
+            margin-bottom: 24px;
             a {
                 cursor: pointer;
                 bottom: 1px solid black;
@@ -186,6 +188,27 @@ export default {
                     background: $gray-800;
                 }
             }
+        }
+
+        .go-back-button {
+          padding: 8px 10px;
+          text-decoration: none;
+          cursor: pointer;
+          margin-bottom: 12px;
+          font-size: 24px;
+          background: $primary-800;
+          color: $primary-dark;
+          border-radius: $border-radius;
+          align-items: center;
+          display: flex;
+          width: 80px;
+
+          svg {
+            height: 30px;
+            width: 30px;
+            margin-right: 5px;
+            transform: rotate(180deg);
+          }
         }
     }
 
