@@ -26,7 +26,7 @@
       <h3 class="artist">{{banger.fields.artist}}</h3>
     </div>
     <div class="banger-card__footer">
-      <nuxt-link :to="`/banger/${banger.fields.urlSlug}`" title="Read More">
+      <nuxt-link :to="`/banger/${banger.fields.urlSlug}`">
         <span>Read More</span>
       </nuxt-link>
     </div>
