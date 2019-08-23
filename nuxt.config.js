@@ -11,6 +11,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'google-site-verification', content: 'iyfXyQ8RJD5Vwen4TUU7STuvodkbcNj87jLF1o22Zr4' },
       { hid: 'description', name: 'description', content: 'A curated song every day. Always fire.' },
       { hid: 'keywords', name: 'keywords', content: 'music, music blog, electronic music, EDM, hip-hop, blog' },
       //Open Graph
