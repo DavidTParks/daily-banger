@@ -17,7 +17,7 @@ import gql from 'graphql-tag'
 import BangerPost from "~/components/BangerPost.vue";
 export default {
   components: {
-    BangerPost
+    BangerPost,
   },
   computed: {
     currentBanger() {

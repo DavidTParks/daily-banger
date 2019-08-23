@@ -3,7 +3,7 @@
         <iframe id="so" scrolling="no" frameborder="0"
         allow="autoplay"
         :src="computedUrl"
-        @load="iFramePreload"
+        @load="iFrameLoaded"
         ></iframe>
     </div>
 </template>
@@ -55,17 +55,17 @@ export default {
     },
     methods: {
         iFramePreload() {
-            setTimeout(this.iFrameLoaded, 1000);
+            setTimeout(this.iFrameLoaded, 100);
         },
         iFrameLoaded () {
-            console.log("Loaded")
-            this.player.getCurrentSound((song) => {
-                console.log(song.permalink_url);
-                console.log(this.songCurrentlyPlaying);
-                this.song = song;
-                this.$store.commit('setSongLoaded', true);
-                this.$store.commit('setSongMetadata', song);
-                this.player.play();
+            console.log("Loaded");
+            this.player.bind(SC.Widget.Events.READY, () => {
+                this.player.getCurrentSound((song) => {
+                    this.song = song;
+                    this.$store.commit('setSongLoaded', true);
+                    this.$store.commit('setSongMetadata', song);
+                    this.player.play();
+                });
             });
         },
     },

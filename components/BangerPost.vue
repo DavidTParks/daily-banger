@@ -17,10 +17,10 @@
             <div class="article-content" v-for="(content, index) in articleContent" :key="index">
               <p>{{content.content[0].value}}</p>
             </div>
-            <!-- <div class="play-song-row">
+            <div class="play-song-row">
               <a v-if="soundcloudUrl === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
               <a v-else @click="playClicked()"><IconPlay class="play-icon"></IconPlay></a>
-            </div> -->
+            </div>
             <!-- <nuxt-link :to="'/'" class="go-back-button">
               <Exit/>Back
             </nuxt-link> -->

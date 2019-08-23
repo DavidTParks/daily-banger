@@ -13,7 +13,6 @@ import NavBar from "~/components/NavBar.vue";
 import BangerList from "~/components/BangerList.vue";
 import SearchBar from "~/components/SearchBar.vue";
 import Footer from "~/components/Footer.vue";
-import SoundcloudPlayer from "~/components/SoundcloudPlayer.vue";
 import Announcement from "~/assets/svg/heroicon-announcement-sm.svg";
 export default {
   components: {
@@ -22,7 +21,6 @@ export default {
     Announcement,
     SearchBar,
     BangerList,
-    SoundcloudPlayer,
     Footer
   },
   async fetch({ store, params }) {
