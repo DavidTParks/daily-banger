@@ -42,6 +42,7 @@ export default {
     },
     watch : {
         songCurrentlyPlaying: function(newVal) {
+            console.log("New song playing");
             this.player.load(this.songCurrentlyPlaying);
         },
         songStatus: function(newVal) {
@@ -57,8 +58,10 @@ export default {
             setTimeout(this.iFrameLoaded, 1000);
         },
         iFrameLoaded () {
+            console.log("Loaded")
             this.player.getCurrentSound((song) => {
-                console.log(song);
+                console.log(song.permalink_url);
+                console.log(this.songCurrentlyPlaying);
                 this.song = song;
                 this.$store.commit('setSongLoaded', true);
                 this.$store.commit('setSongMetadata', song);

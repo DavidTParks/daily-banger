@@ -80,7 +80,7 @@ export default {
     .play-bar {
         padding: 15px;
         height: 100%;
-        background: $gray-100;
+        background: $primary-darkest;
         p {
             margin-top: 0;
             margin-bottom: 0;

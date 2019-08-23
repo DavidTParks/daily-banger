@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      <BangerPost 
+      <BangerPost v-if="currentBanger"
       :songTitle="currentBanger.fields.songTitle"
       :date="currentBanger.fields.date"
       :genre="currentBanger.fields.genres[0]"
@@ -28,6 +28,7 @@ export default {
     }
   },
   async fetch({ store, params }) {
+    console.log("Fetching")
     await store.dispatch('banger/getBangerBySlug', params.slug)
   },
   head () {

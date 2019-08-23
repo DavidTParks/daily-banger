@@ -55,6 +55,7 @@ export default {
   },
   methods : {
     playClicked (banger) {
+      console.log("Play clicked firing")
       if(this.songUrl === banger.fields.soundcloudLink) {
         this.$store.commit('resumePlay');
       } else {

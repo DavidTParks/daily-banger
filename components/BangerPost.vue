@@ -57,19 +57,14 @@ export default {
       'soundcloudUrl'
   ],
   methods : {
-    playSong () {
-        if(this.songPlaying) {
-            this.$store.commit('resumePlay');
-        }
-    },
     pauseSong() {
       this.$store.commit('pauseSong');
     },
     playClicked () {
-      console.log("Play clicked firing");
       if(this.songUrl === this.soundcloudUrl) {
         this.$store.commit('resumePlay');
       } else {
+        console.log(this.soundcloudUrl);
         this.$store.commit('setSongLoaded', false);
         this.$store.commit('setSong', this.soundcloudUrl);
         this.$store.commit('setArtist', this.artist);
