@@ -22,11 +22,6 @@ export default {
   data() {
     return {};
   },
-  methods : {
-    emitUrl(url) {
-      this.$emit('play-song', url);
-    }
-  }
 };
 </script>
 

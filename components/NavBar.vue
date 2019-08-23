@@ -77,6 +77,9 @@ export default {
       font-weight: 900;
       white-space: nowrap;
       overflow: hidden;
+      text-transform: uppercase;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
     }
 
     &:first-child {

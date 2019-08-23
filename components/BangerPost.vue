@@ -17,9 +17,11 @@
             <!-- <img class="article-image" :src="`${songImage}?w=440&&fm=webp`"/> -->
             <p class="article-content">{{articleContent}}</p>
             <div class="play-song-row">
-                <a>
-                <IconPlay/>
-                </a>
+                <!-- <a>
+                    <IconPlay/>
+                </a> -->
+            <a v-if="soundcloudUrl === songUrl && songStatus === true && songLoaded"  @click="pauseSong()"><IconPause class="play-icon"></IconPause></a>
+            <a v-else @click="playClicked()"><IconPlay class="play-icon"></IconPlay></a>
             </div>
         </div>
         <!-- <div class="related-content">
@@ -42,7 +44,8 @@ import FastRewind from "~/assets/svg/icon-fast-rewind.svg";
 export default {
   name: 'banger-post',
   components: {
-    IconPlay
+    IconPlay,
+    IconPause
   },
   props: [
       'songTitle', 
@@ -50,7 +53,8 @@ export default {
       'genre',
       'artist',
       'articleContent',
-      'songImage'
+      'songImage',
+      'soundcloudUrl'
   ],
   methods : {
     playSong () {
@@ -60,9 +64,27 @@ export default {
     },
     pauseSong() {
       this.$store.commit('pauseSong');
-    }
+    },
+    playClicked () {
+      if(this.songUrl === this.soundcloudUrl) {
+        this.$store.commit('resumePlay');
+      } else {
+        this.$store.commit('setSongLoaded', false);
+        this.$store.commit('setSong', this.soundcloudUrl);
+        this.$store.commit('setArtist', this.artist);
+      }
+    },
   },
   computed: {
+    songUrl() {
+      return this.$store.state.songCurrentlyPlaying;
+    },
+    songStatus() {
+      return this.$store.state.isSongPlaying;
+    },
+    songLoaded() {
+      return this.$store.state.songLoaded;
+    }
   }
 }
 </script>

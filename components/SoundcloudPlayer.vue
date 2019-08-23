@@ -1,5 +1,5 @@
 <template>
-    <div class="player-wrapper" v-show="songPlaying">
+    <div class="player-wrapper" v-show="songCurrentlyPlaying">
         <iframe id="so" scrolling="no" frameborder="0"
         allow="autoplay"
         :src="computedUrl"
@@ -31,6 +31,7 @@ export default {
         }
     },
     mounted () {
+        console.log("Mounting again")
         const IFrame = document.getElementById('so');
         this.player = SC.Widget(IFrame);
         this.player.bind(SC.Widget.Events.PLAY_PROGRESS, (e) => {
@@ -41,11 +42,12 @@ export default {
         })
     },
     watch : {
-        songPlaying: function(oldVal, newVal) {
-                        console.log(oldVal,newVal);
-            this.player.load(this.songPlaying);
+        songCurrentlyPlaying: function(oldVal, newVal) {
+            console.log("songCurrentlyPlaying watcher firing");
+            this.player.load(this.songCurrentlyPlaying);
         },
         songStatus: function(newVal) {
+            console.log("Song status firing");
             if(!newVal) {
                 this.player.pause();
             } else {
@@ -57,15 +59,8 @@ export default {
         iFramePreload() {
             setTimeout(this.iFrameLoaded, 1000);
         },
-        checkUrl(url) {
-            const pattern = /^https:\/\/soundcloud\.com\/[a-z1-9-]*\/[a-z1-9-]*\/?$/;
-            if (url === undefined) {
-                return null
-            } else {
-                return url.match(pattern)
-            }
-        },
         iFrameLoaded () {
+            console.log("Iframe Loaded firing")
             this.player.getCurrentSound((song) => {
                 this.song = song;
                 this.$store.commit('setSongLoaded', true);
@@ -73,20 +68,13 @@ export default {
             })
             this.player.play();
         },
-        loadSong () {
-            this.player.load(this.soundcloudUrl);
-        },
-        playNewSong(url) {
-            this.soundcloudUrl = url;
-            this.loadSong();
-        } 
     },
     computed: {
         computedUrl () {
             const base = "https://w.soundcloud.com/player/?url=";
             return base + this.songUrl;
         },
-        songPlaying() {
+        songCurrentlyPlaying() {
             return this.$store.state.songCurrentlyPlaying;
         },
         songStatus() {
