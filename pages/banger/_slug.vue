@@ -5,7 +5,7 @@
       :date="currentBanger.fields.date"
       :genre="currentBanger.fields.genres[0]"
       :artist="currentBanger.fields.artist"
-      :article-content="currentBanger.fields.articleContent.content[0].content[0].value"
+      :article-content="currentBanger.fields.articleContent.content"
       :song-image="currentBanger.fields.image.fields.file.url"
       :soundcloud-url="currentBanger.fields.soundcloudLink"
       />

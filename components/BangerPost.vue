@@ -15,7 +15,9 @@
                 <img class="article-image" :src="`${songImage}?w=668`" :alt="`Article image for ${songTitle} by ${artist}`">
             </picture>
             <!-- <img class="article-image" :src="`${songImage}?w=440&&fm=webp`"/> -->
-            <p class="article-content">{{articleContent}}</p>
+            <div class="article-content" v-for="(content, index) in articleContent" :key="index">
+              <p>{{content.content[0].value}}</p>
+            </div>
             <div class="play-song-row">
                 <!-- <a>
                     <IconPlay/>
