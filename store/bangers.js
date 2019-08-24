@@ -6,7 +6,10 @@ export const state = () => ({
 
 export const mutations = {
     setBangers(state, payload) {
-        state.bangers = payload;
+
+        state.bangers = payload.sort((a,b) => {
+            return new Date(b.fields.date) - new Date(a.fields.date);
+        });
     }
 }
 

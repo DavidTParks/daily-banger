@@ -8,7 +8,7 @@
       </picture>
       <div class="date-pill">
         <span>{{ 
-          `${new Date(banger.fields.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.fields.date).getDate() + 1}, ${new Date(banger.fields.date).getFullYear()}` 
+          `${new Date(banger.fields.date).toLocaleString('default', {month: 'long'})} ${new Date(banger.fields.date).getDate()}, ${new Date(banger.fields.date).getFullYear()}` 
           }}</span>
       </div>
       <div class="genre-pill">

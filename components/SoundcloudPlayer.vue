@@ -42,7 +42,6 @@ export default {
     },
     watch : {
         songCurrentlyPlaying: function(newVal) {
-            console.log("New song playing");
             this.player.load(this.songCurrentlyPlaying);
         },
         songStatus: function(newVal) {
@@ -54,11 +53,7 @@ export default {
         }
     },
     methods: {
-        iFramePreload() {
-            setTimeout(this.iFrameLoaded, 100);
-        },
         iFrameLoaded () {
-            console.log("Loaded");
             this.player.bind(SC.Widget.Events.READY, () => {
                 this.player.getCurrentSound((song) => {
                     this.song = song;
