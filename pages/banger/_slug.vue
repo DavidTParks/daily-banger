@@ -45,7 +45,7 @@ export default {
         { name: 'og:title', content: `${this.currentBanger.fields.songTitle} by ${this.currentBanger.fields.artist} - The Daily Banger` },
         { name: 'og:description', content: this.currentBanger.fields.articleContent.content[0].content[0].value },
         { name: 'og:image', content: this.currentBanger.fields.image.fields.file.url },
-        { name: 'og:image:secure_url', content: this.currentBanger.fields.image.fields.file.url },
+        { name: 'og:image:secure_url', content: `https:${this.currentBanger.fields.image.fields.file.url}` },
         { name: 'og:url', content: `https://www.thedailybanger.com/banger/${this.$route.params.slug}` },
         { name: 'og:type', content: 'article' },
 
@@ -54,7 +54,7 @@ export default {
         { name: 'twitter:site', content: '@TheDailyBanger2' },
         { name: 'twitter:title', content: `${this.currentBanger.fields.songTitle} by ${this.currentBanger.fields.artist} - The Daily Banger` },
         { name: 'twitter:description', content: this.currentBanger.fields.articleContent.content[0].content[0].value },
-        { name: 'twitter:image', content: this.currentBanger.fields.image.fields.file.url },
+        { name: 'twitter:image', content: `https:${this.currentBanger.fields.image.fields.file.url}` },
         { name: 'twitter:image:alt', content: `Song cover for ${this.currentBanger.fields.songTitle} by ${this.currentBanger.fields.artist}` }
       ]
     }
