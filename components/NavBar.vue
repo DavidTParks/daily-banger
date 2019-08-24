@@ -46,7 +46,7 @@ export default {
 @import "~/assets/sass/variables.scss";
 .navbar {
   background: $primary;
-  max-height: 80px;
+  max-height: 60px;
   position: relative;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@ export default {
 
   .logo {
     width: auto;
-    height: 80px;
+    height: 60px;
     object-fit: contain;
   }
 
