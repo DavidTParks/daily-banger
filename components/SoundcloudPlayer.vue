@@ -38,7 +38,23 @@ export default {
         });
         this.$on('newValueSet', (newValue) => {
             this.player.seekTo(newValue[0]);
-        })
+        });
+
+        this.player.bind(SC.Widget.Events.PLAY_PROGRESS, (progress) => {
+            this.$store.commit('setCurrentProgress', progress.currentPosition);
+            this.$store.commit('setRelativePosition', progress.relativePosition);
+        });
+
+        this.player.bind(SC.Widget.Events.FINISH, () => {
+            console.log("Song finished");
+        });
+        
+        this.player.bind(SC.Widget.Events.PLAY, () => {
+            console.log("Song played");
+        });
+        this.player.bind(SC.Widget.Events.PAUSE, () => {
+            console.log("Song paused");
+        });
     },
     watch : {
         songCurrentlyPlaying: function(newVal) {
@@ -64,15 +80,6 @@ export default {
                     this.$store.commit('setSongMetadata', song);
                     this.player.play();
                 });
-
-                this.player.bind(SC.Widget.Events.PLAY_PROGRESS, (progress) => {
-                    this.$store.commit('setCurrentProgress', progress.currentPosition);
-                    this.$store.commit('setRelativePosition', progress.relativePosition);
-                });
-
-                this.player.bind(SC.Widget.Events.FINISH, () => {
-                    console.log("Song finished");
-                })
             });
         },
     },
