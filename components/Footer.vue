@@ -143,6 +143,14 @@ export default {
     .duration-controls {
       text-align: center;
       color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     }
     p {
       margin-top: 0;
