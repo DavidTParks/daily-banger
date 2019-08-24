@@ -41,10 +41,11 @@ export default {
           name: 'keywords',
           content: `${this.currentBanger.fields.songTitle}, ${this.currentBanger.fields.artist}, ${this.currentBanger.fields.genres[0]}`
         },
-        //Open Graph
+        //Open Graph og:image:secure_url
         { name: 'og:title', content: `${this.currentBanger.fields.songTitle} by ${this.currentBanger.fields.artist} - The Daily Banger` },
         { name: 'og:description', content: this.currentBanger.fields.articleContent.content[0].content[0].value },
         { name: 'og:image', content: this.currentBanger.fields.image.fields.file.url },
+        { name: 'og:image:secure_url', content: this.currentBanger.fields.image.fields.file.url },
         { name: 'og:url', content: `https://www.thedailybanger.com/banger/${this.$route.params.slug}` },
         { name: 'og:type', content: 'article' },
 
