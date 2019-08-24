@@ -202,7 +202,7 @@ export default {
         opacity: 0.2;
 
         img {
-          padding-right: 15px;
+        //   padding-right: 15px;
         }
       }
 
