@@ -13,6 +13,7 @@ export const mutations = {
     }
 }
 
+
 export const actions = {
     async getBangers({ commit }) {
         const response = await contentfulClient.getEntries({

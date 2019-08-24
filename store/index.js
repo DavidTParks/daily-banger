@@ -6,7 +6,9 @@ export const state = () => ({
     artist: '',
     songObject: {
 
-    }
+    },
+    currentSongProgress: 0,
+    relativeSongProgress: 0,
 })
 
 export const mutations = {
@@ -29,5 +31,11 @@ export const mutations = {
     },
     setArtist(state, artist) {
         state.artist = artist;
-    }
+    },
+    setCurrentProgress(state, progress) {
+        state.currentSongProgress = progress;
+    },
+    setRelativePosition(state, relativePosition) {
+        state.relativeSongProgress = relativePosition;
+    },
 }

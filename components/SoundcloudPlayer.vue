@@ -61,6 +61,11 @@ export default {
                     this.$store.commit('setSongMetadata', song);
                     this.player.play();
                 });
+
+                this.player.bind(SC.Widget.Events.PLAY_PROGRESS, (progress) => {
+                    this.$store.commit('setCurrentProgress', progress.currentPosition);
+                    this.$store.commit('setRelativePosition', progress.relativePosition);
+                });
             });
         },
     },
@@ -78,8 +83,8 @@ export default {
         songMetadata() {
             return this.$store.state.songObject;
         },
-        percentThroughSong() {
-            return this.songMetadata.currentPosition / this.songMetadata.duration;
+        currentSongProgress() {
+            return this.$store.state.currentSongProgress;
         }
     }
 }
