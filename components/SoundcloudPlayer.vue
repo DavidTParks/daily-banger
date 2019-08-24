@@ -70,7 +70,7 @@ export default {
                     this.$store.commit('setRelativePosition', progress.relativePosition);
                 });
 
-                this.player.bind(SC.Widgets.Events.FINISH, () => {
+                this.player.bind(SC.Widget.Events.FINISH, () => {
                     console.log("Song finished");
                 })
             });

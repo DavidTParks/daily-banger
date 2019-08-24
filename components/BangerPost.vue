@@ -7,7 +7,7 @@
             <h1 class="article-header">{{songTitle}}</h1>
             <h2 class="article-subtitle">{{artist}}</h2>
             <div class="pill-wrapper">
-                <h5 class="article-date">{{ `${new Date(date).toLocaleString('default', {month: 'long'})} ${new Date(date).getDate() + 1}, ${new Date(date).getFullYear()}` }}</h5>
+                <h5 class="article-date">{{ `${new Date(date).toLocaleString('default', {month: 'long'})} ${new Date(date).getDate()}, ${new Date(date).getFullYear()}` }}</h5>
                 <h5 class="article-genre-pill">{{genre}}</h5>
             </div>
             <picture>
