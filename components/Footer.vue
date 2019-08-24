@@ -3,7 +3,7 @@
     <div class="play-bar">
       <div class="duration-controls">
         <span v-if="isSongLoaded && songMetadata">{{millisToMinutesAndSeconds(currentSongProgress)}}</span>
-        <svg class="progress-bar" width="200" height="10" data-value="40">
+        <svg @click="seekSong($event)" class="progress-bar" width="200" height="10" data-value="40">
             <style>
                 .bg,
                 .meter {
@@ -74,6 +74,12 @@ export default {
     },
     playNextSong() {
         
+    },
+    seekSong(e) {
+        var rect = e.target.getBoundingClientRect();
+        var x = e.clientX - rect.left; //x position within the element.
+        var y = e.clientY - rect.top;  //y position within the element.
+        this.$store.commit('setSeekValue', (x/200) * this.songMetadata.duration);
     },
     millisToMinutesAndSeconds(millis) {
       var minutes = Math.floor(millis / 60000);

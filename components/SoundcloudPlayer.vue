@@ -44,6 +44,9 @@ export default {
         songCurrentlyPlaying: function(newVal) {
             this.player.load(this.songCurrentlyPlaying);
         },
+        seekValue: function(newVal) {
+            this.player.seekTo(newVal);
+        },
         songStatus: function(newVal) {
             if(!newVal) {
                 this.player.pause();
@@ -66,6 +69,10 @@ export default {
                     this.$store.commit('setCurrentProgress', progress.currentPosition);
                     this.$store.commit('setRelativePosition', progress.relativePosition);
                 });
+
+                this.player.bind(SC.Widgets.Events.FINISH, () => {
+                    console.log("Song finished");
+                })
             });
         },
     },
@@ -85,6 +92,9 @@ export default {
         },
         currentSongProgress() {
             return this.$store.state.currentSongProgress;
+        },
+        seekValue() {
+            return this.$store.state.seekValue; 
         }
     }
 }

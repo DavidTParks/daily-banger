@@ -9,6 +9,7 @@ export const state = () => ({
     },
     currentSongProgress: 0,
     relativeSongProgress: 0,
+    seekValue: 0
 })
 
 export const mutations = {
@@ -38,4 +39,7 @@ export const mutations = {
     setRelativePosition(state, relativePosition) {
         state.relativeSongProgress = relativePosition;
     },
+    setSeekValue(state, seekVal) {
+        state.seekValue = seekVal;
+    }
 }
