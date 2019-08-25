@@ -33,9 +33,6 @@ export default {
     mounted () {
         const IFrame = document.getElementById('so');
         this.player = SC.Widget(IFrame);
-        this.player.bind(SC.Widget.Events.PLAY_PROGRESS, (e) => {
-            this.song.currentPosition = e.currentPosition;
-        });
         this.$on('newValueSet', (newValue) => {
             this.player.seekTo(newValue[0]);
         });
@@ -55,6 +52,9 @@ export default {
         this.player.bind(SC.Widget.Events.PAUSE, () => {
             console.log("Song paused");
         });
+        this.player.bind(SC.Widget.Events.READY, () => {
+            console.log("Iframe ready");
+        });
     },
     watch : {
         songCurrentlyPlaying: function(newVal) {
@@ -73,7 +73,9 @@ export default {
     },
     methods: {
         iFrameLoaded () {
+            console.log("Iframe loaded firing");
             this.player.bind(SC.Widget.Events.READY, () => {
+                console.log("Reading inside loaded firing");
                 this.player.getCurrentSound((song) => {
                     this.song = song;
                     this.$store.commit('setSongLoaded', true);
