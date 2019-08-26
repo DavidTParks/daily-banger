@@ -48,11 +48,11 @@
     </div>
     <div class="item">
       <a href="https://www.instagram.com/thedailybanger_/" target="_blank">
-        <ion-icon class="instagram-logo" size="large" name="logo-instagram"></ion-icon>
+        <i class="fab fa-instagram instagram-logo fa-2x"></i>
       </a>
-    <a href="https://twitter.com/thedailybanger2" target="_blank">
-        <ion-icon class="instagram-logo" size="large" name="logo-twitter"></ion-icon>
-      </a>     
+      <a href="https://twitter.com/thedailybanger2" target="_blank">
+        <i class="fab fa-twitter instagram-logo fa-2x"></i>
+      </a>
     </div>
 
     <!-- <p class="site-footer">© The Daily Banger</p> -->
@@ -151,9 +151,9 @@ export default {
     margin-right: 24px;
 
     .instagram-logo {
-      fill: white;
       height: 40px;
       width: 40px;
+      color: white;
       margin-right: 15px;
 
       svg: {
@@ -161,7 +161,8 @@ export default {
       }
 
       &:hover {
-          fill: $secondary;
+        fill: $secondary;
+        color: $secondary;
       }
 
       icon-icon {
@@ -280,11 +281,11 @@ icon-icon {
   }
 
   .item {
-      margin-right: 0 !important; 
+    margin-right: 0 !important;
   }
 
   .now-playing {
-      margin-left: 12px !important;
+    margin-left: 12px !important;
   }
 }
 </style>
