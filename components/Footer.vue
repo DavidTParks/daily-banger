@@ -1,48 +1,58 @@
 <template>
   <footer class="site_footer">
+    <div class="now-playing">
+      <img v-if="isSongLoaded && songMetadata" :src="songMetadata.artwork_url">
+      <p v-if="isSongLoaded && songMetadata">
+        Now Playing
+        <span>{{artist}} - {{songMetadata.title}}</span>
+      </p>
+    </div>
     <div class="play-bar">
       <div class="duration-controls">
         <span v-if="isSongLoaded && songMetadata">{{millisToMinutesAndSeconds(currentSongProgress)}}</span>
         <svg @click="seekSong($event)" class="progress-bar" width="200" height="10" data-value="40">
-            <style>
-                .bg,
-                .meter {
-                    fill: none;
-                    stroke-width: 20px;
-                    stroke-miterlimit: round;
-                }
-                .meter {
-                    transition: stroke-dashoffset;
-                    stroke-dasharray: 200;
-                    stroke-dashoffset: 200;
-                }
-            </style>
-            <path class="bg" stroke="#ccc" d="M0 10, 200 10"></path>
-            <path :style="{'stroke-dashoffset' : 200 -(relativeSongProgress * 200)}" class="meter" stroke="#CBA406" d="M0 10, 200 10"></path>
+          <style>
+  .bg,
+  .meter {
+    fill: none;
+    stroke-width: 20px;
+    stroke-miterlimit: round;
+  }
+  .meter {
+    transition: stroke-dashoffset;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+          </style>
+          <path class="bg" stroke="#ccc" d="M0 10, 200 10"></path>
+          <path
+            :style="{'stroke-dashoffset' : 200 -(relativeSongProgress * 200)}"
+            class="meter"
+            stroke="#CBA406"
+            d="M0 10, 200 10"
+          ></path>
         </svg>
-        <span v-if="isSongLoaded && songMetadata">{{millisToMinutesAndSeconds(songMetadata.duration)}}</span>
+        <span
+          v-if="isSongLoaded && songMetadata"
+        >{{millisToMinutesAndSeconds(songMetadata.duration)}}</span>
         <!-- <span v-if="isSongLoaded && songMetadata">{{relativeSongProgress}}</span> -->
       </div>
       <div class="play-controls">
-        <div class="now-playing">
-          <img v-if="isSongLoaded && songMetadata" :src="songMetadata.artwork_url">
-          <p v-if="isSongLoaded && songMetadata">
-            Now Playing
-            <span>{{artist}} - {{songMetadata.title}}</span>
-          </p>
-        </div>
         <div class="actions">
           <FastRewind class="fast-rewind"/>
           <IconPlay v-if="!songStatus" @click="playSong"/>
           <IconPause v-else @click="pauseSong"/>
           <FastForward class="fast-forward"/>
         </div>
-        <div class="item">
-          <img
-            src="https://developers.soundcloud.com/assets/logo_big_white-65c2b096da68dd533db18b9f07d14054.png"
-          >
-        </div>
       </div>
+    </div>
+    <div class="item">
+      <a href="https://www.instagram.com/thedailybanger_/" target="_blank">
+        <ion-icon class="instagram-logo" size="large" name="logo-instagram"></ion-icon>
+      </a>
+    <a href="https://twitter.com/thedailybanger2" target="_blank">
+        <ion-icon class="instagram-logo" size="large" name="logo-twitter"></ion-icon>
+      </a>     
     </div>
 
     <!-- <p class="site-footer">© The Daily Banger</p> -->
@@ -72,16 +82,17 @@ export default {
     pauseSong() {
       this.$store.commit("pauseSong");
     },
-    playNextSong() {
-        
-    },
+    playNextSong() {},
     seekSong(e) {
-        if(this.songMetadata) {
+      if (this.songMetadata) {
         var rect = e.target.getBoundingClientRect();
         var x = e.clientX - rect.left; //x position within the element.
-        var y = e.clientY - rect.top;  //y position within the element.
-        this.$store.commit('setSeekValue', (x/200) * this.songMetadata.duration);
-        }
+        var y = e.clientY - rect.top; //y position within the element.
+        this.$store.commit(
+          "setSeekValue",
+          (x / 200) * this.songMetadata.duration
+        );
+      }
     },
     millisToMinutesAndSeconds(millis) {
       var minutes = Math.floor(millis / 60000);
@@ -109,7 +120,7 @@ export default {
       return this.$store.state.songLoaded;
     },
     songDuration() {
-        return this.$store.state.songDuration;
+      return this.$store.state.songDuration;
     },
     artist() {
       return this.$store.state.artist;
@@ -130,14 +141,73 @@ export default {
   // justify-content: center;
   align-items: center;
   z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .item {
+    flex: 1;
+    text-align: right;
+    margin-right: 24px;
+
+    .instagram-logo {
+      fill: white;
+      height: 40px;
+      width: 40px;
+      margin-right: 15px;
+
+      svg: {
+        fill: white;
+      }
+
+      &:hover {
+          fill: $secondary;
+      }
+
+      icon-icon {
+        margin-right: 15px;
+      }
+    }
+
+    svg {
+      fill: white !important;
+    }
+  }
+
+  .now-playing {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+
+    img {
+      // margin-right: 15px;
+      padding-right: 15px;
+      height: 60px;
+      width: 60px;
+      object-fit: contain;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      font-size: 18px;
+      color: white;
+
+      span {
+        color: $secondary;
+      }
+    }
+  }
 
   .play-bar {
     padding: 15px;
+    flex: 1;
     height: 100%;
     background: $primary-darkest;
 
     .progress-bar {
-
     }
 
     .duration-controls {
@@ -146,6 +216,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 10px;
 
       svg {
         margin-left: 10px;
@@ -165,45 +236,9 @@ export default {
       // justify-content: space-between;
       align-items: center;
 
-      .now-playing {
-        flex: 1;
-        display: flex;
-        align-items: center;
-
-        img {
-          // margin-right: 15px;
-          padding-right: 15px;
-          height: 40px;
-          width: 40px;
-          object-fit: contain;
-        }
-
-        p {
-          display: flex;
-          flex-direction: column;
-          text-align: left;
-          font-size: 14px;
-          color: white;
-
-          span {
-            color: $secondary;
-          }
-        }
-      }
-
       .actions {
         flex: 1;
         text-align: center;
-      }
-
-      .item {
-        flex: 1;
-        text-align: right;
-        opacity: 0.2;
-
-        img {
-        //   padding-right: 15px;
-        }
       }
 
       svg {
@@ -235,9 +270,21 @@ export default {
   }
 }
 
+icon-icon {
+  fill: white;
+}
+
 @media (max-width: 555px) {
-  .play-controls {
+  .site_footer {
     flex-direction: column !important;
+  }
+
+  .item {
+      margin-right: 0 !important; 
+  }
+
+  .now-playing {
+      margin-left: 12px !important;
   }
 }
 </style>

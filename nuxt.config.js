@@ -21,7 +21,7 @@ module.exports = {
       { name: 'og:type', content: 'website' },
     ],
     script: [
-      { src: 'https://kit.fontawesome.com/215417b77b.js' },
+      { type: 'text/javascript', src: 'https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js' },
       { type: 'text/javascript', src: 'https://w.soundcloud.com/player/api.js'}
     ],
     link: [
