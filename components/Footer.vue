@@ -148,7 +148,7 @@ export default {
   .item {
     flex: 1;
     text-align: right;
-    margin-right: 24px;
+    margin-right: 12px;
 
     .instagram-logo {
       height: 40px;
@@ -179,7 +179,7 @@ export default {
     flex: 1;
     display: flex;
     align-items: center;
-    margin-left: 24px;
+    margin-left: 12px;
 
     img {
       // margin-right: 15px;
