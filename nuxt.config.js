@@ -21,8 +21,8 @@ module.exports = {
       { name: 'og:type', content: 'website' },
     ],
     script: [
-      { type: 'text/javascript', src: 'https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js' },
-      { type: 'text/javascript', src: 'https://w.soundcloud.com/player/api.js'}
+      { type: 'text/javascript', src: 'https://w.soundcloud.com/player/api.js'},
+      { type: 'text/javascript', src: 'https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js' }, 
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/FaviconLogo.png' },
