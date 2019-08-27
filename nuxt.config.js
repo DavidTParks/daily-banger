@@ -69,6 +69,15 @@ module.exports = {
   */
   devModules: [
   ],
+  oneSignal: {
+    init: {
+      appId: '28375462-e6a4-4885-9b2d-9d0d28903dbd',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true
+      }
+    }
+  },
   /*
   ** Environment Variables
   */
@@ -83,6 +92,7 @@ module.exports = {
   modules: [
     'nuxt-purgecss',
     '@nuxtjs/sitemap',
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
   ],
   apollo: {

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc10",
+    "@nuxtjs/onesignal": "^3.0.0-beta.16",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/sitemap": "^1.2.0",
     "apollo-fetch": "^0.7.0",

@@ -282,6 +282,10 @@ icon-icon {
 
   .item {
     margin-right: 0 !important;
+
+    i {
+        display: none !important;
+    }
   }
 
   .now-playing {
