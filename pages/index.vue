@@ -1,9 +1,9 @@
 <template>
     <div class="container">
-    <BangerList 
-    class="animated fadeIn faster main-content" 
-    :bangers="bangers"
-    ></BangerList>
+      <BangerList v-if="bangers.length"
+      class="animated fadeIn faster main-content" 
+      :bangers="bangers"
+      ></BangerList>
     </div>
 </template>
 
@@ -57,6 +57,6 @@ export default {
   min-width: 200px;
   height: 100vh;
   background: $side-nav-outer;
-;
 }
+
 </style>
