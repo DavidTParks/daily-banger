@@ -9,7 +9,8 @@ export const state = () => ({
     },
     currentSongProgress: 0,
     relativeSongProgress: 0,
-    seekValue: 0
+    seekValue: 0,
+    player: ''
 })
 
 export const mutations = {
@@ -41,5 +42,8 @@ export const mutations = {
     },
     setSeekValue(state, seekVal) {
         state.seekValue = seekVal;
+    },
+    setPlayer(state, player) {
+        state.player = player;
     }
 }
