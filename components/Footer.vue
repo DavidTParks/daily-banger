@@ -135,7 +135,7 @@ export default {
   width: 100vw;
   position: fixed;
   bottom: 0;
-  min-height: 80px;
+  min-height: 115px;
   background: $primary-darkest;
   // display: flex;
   // justify-content: center;
@@ -148,7 +148,7 @@ export default {
   .item {
     flex: 1;
     text-align: right;
-    margin-right: 12px;
+    margin-right: 24px;
 
     .instagram-logo {
       height: 40px;
@@ -179,7 +179,7 @@ export default {
     flex: 1;
     display: flex;
     align-items: center;
-    margin-left: 12px;
+    margin-left: 24px;
 
     img {
       // margin-right: 15px;
@@ -203,7 +203,7 @@ export default {
   }
 
   .play-bar {
-    padding: 15px;
+    padding: 24px;
     flex: 1;
     height: 100%;
     background: $primary-darkest;
@@ -217,7 +217,8 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      height: 20px;
 
       svg {
         margin-left: 10px;
