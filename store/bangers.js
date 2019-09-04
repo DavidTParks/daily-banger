@@ -17,7 +17,7 @@ export const mutations = {
 export const actions = {
     async getBangers({ commit }) {
         const response = await contentfulClient.getEntries({
-            content_type: 'bangerPost'
+            content_type: 'bangerPost',
         })
         if (response.items.length > 0) {
             commit('setBangers', response.items);

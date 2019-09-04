@@ -221,6 +221,7 @@ export default {
       margin-bottom: 15px;
       margin-top: 0 !important;
       color: $gray-400;
+      font-weight: 400;
     }
     
   }
