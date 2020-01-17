@@ -8,11 +8,11 @@
       </li>
       <li>
          <nuxt-link class="flex items-center" :to="'/'">
-          <picture class="w-24 h-auto">
+          <picture class="w-16 lg:w-20 h-auto">
             <source srcset="../assets/logo/400dpiLogoCropped.webp" type="image/webp">
             <img class="logo" src="~/assets/logo/400dpiLogoCropped.png" alt="Alt Text!">
           </picture>
-          <h1 class="text-white text-3xl uppercase font-bold">The Daily Banger</h1>
+          <h1 class="text-white lg:text-3xl uppercase font-bold hidden sm:flex">The Daily Banger</h1>
          </nuxt-link>
         <!-- <img class="logo" src="~/assets/logo/400dpiLogoCropped.webp"/> -->
         <!-- <DailyBangerLogo class="logo"/> -->
