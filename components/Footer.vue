@@ -4,7 +4,7 @@
       <img class="shadow-lg h-12 w-12 mr-2" v-if="isSongLoaded && songMetadata" :src="songMetadata.artwork_url">
       <p class="text-white flex flex-col" v-if="isSongLoaded && songMetadata">
         Now Playing
-        <span class="text-yellow-400">{{artist}} - {{songMetadata.title}}</span>
+        <span class="text-yellow-400 truncate w-full max-w-sm">{{artist}} - {{songMetadata.title}}</span>
       </p>
     </div>
     <div class="play-bar flex flex-col justify-center items-center flex-1">
@@ -37,12 +37,12 @@
         >{{millisToMinutesAndSeconds(songMetadata.duration)}}</span>
         <!-- <span v-if="isSongLoaded && songMetadata">{{relativeSongProgress}}</span> -->
       </div>
-      <div class="play-controls flex hidden">
+      <div class="play-controls flex">
         <div class="actions flex">
-          <FastRewind class="fast-rewind w-8 h-8"/>
-          <IconPlay class="w-8 h-8" v-if="!songStatus" @click="playSong"/>
-          <IconPause class="w-8 h-8" v-else @click="pauseSong"/>
-          <FastForward class="fast-forward w-8 h-8"/>
+          <FastRewind class="music-control fast-rewind w-8 h-8"/>
+          <IconPlay class="music-control w-8 h-8" v-if="!songStatus" @click="playSong"/>
+          <IconPause class="music-control w-8 h-8" v-else @click="pauseSong"/>
+          <FastForward class="music-control ast-forward w-8 h-8"/>
         </div>
       </div>
     </div>
@@ -129,8 +129,17 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import "~/assets/sass/variables.scss";
+.music-control {
+  @apply cursor-pointer;
+  .primary {
+    fill: white;
+  }
 
+  .secondary {
+    @apply text-gray-900 fill-current;
+  }
+}
 
 </style>
