@@ -1,28 +1,28 @@
 <template>
-  <footer class="site_footer">
-    <div class="now-playing">
-      <img v-if="isSongLoaded && songMetadata" :src="songMetadata.artwork_url">
-      <p v-if="isSongLoaded && songMetadata">
+  <footer class="fixed bottom-0 flex min-w-screen w-screen z-30 bg-gray-900 py-4 px-4 justify-between flex-col sm:flex-row h-48 sm:h-auto">
+    <div class="flex h-full flex-1">
+      <img class="shadow-lg h-12 w-12 mr-2" v-if="isSongLoaded && songMetadata" :src="songMetadata.artwork_url">
+      <p class="text-white flex flex-col" v-if="isSongLoaded && songMetadata">
         Now Playing
-        <span>{{artist}} - {{songMetadata.title}}</span>
+        <span class="text-yellow-400">{{artist}} - {{songMetadata.title}}</span>
       </p>
     </div>
-    <div class="play-bar">
-      <div class="duration-controls">
-        <span v-if="isSongLoaded && songMetadata">{{millisToMinutesAndSeconds(currentSongProgress)}}</span>
+    <div class="play-bar flex flex-col justify-center items-center flex-1">
+      <div class="duration-controls flex items-center">
+        <span class="mr-2 text-white" v-if="isSongLoaded && songMetadata">{{millisToMinutesAndSeconds(currentSongProgress)}}</span>
         <svg @click="seekSong($event)" class="progress-bar" width="200" height="10" data-value="40">
           <style>
-  .bg,
-  .meter {
-    fill: none;
-    stroke-width: 20px;
-    stroke-miterlimit: round;
-  }
-  .meter {
-    transition: stroke-dashoffset;
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-  }
+          .bg,
+          .meter {
+            fill: none;
+            stroke-width: 20px;
+            stroke-miterlimit: round;
+          }
+          .meter {
+            transition: stroke-dashoffset;
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+          }
           </style>
           <path class="bg" stroke="#ccc" d="M0 10, 200 10"></path>
           <path
@@ -32,26 +32,26 @@
             d="M0 10, 200 10"
           ></path>
         </svg>
-        <span
+        <span class="ml-2 text-white"
           v-if="isSongLoaded && songMetadata"
         >{{millisToMinutesAndSeconds(songMetadata.duration)}}</span>
         <!-- <span v-if="isSongLoaded && songMetadata">{{relativeSongProgress}}</span> -->
       </div>
-      <div class="play-controls">
-        <div class="actions">
-          <FastRewind class="fast-rewind"/>
-          <IconPlay v-if="!songStatus" @click="playSong"/>
-          <IconPause v-else @click="pauseSong"/>
-          <FastForward class="fast-forward"/>
+      <div class="play-controls flex hidden">
+        <div class="actions flex">
+          <FastRewind class="fast-rewind w-8 h-8"/>
+          <IconPlay class="w-8 h-8" v-if="!songStatus" @click="playSong"/>
+          <IconPause class="w-8 h-8" v-else @click="pauseSong"/>
+          <FastForward class="fast-forward w-8 h-8"/>
         </div>
       </div>
     </div>
-    <div class="item">
-      <a href="https://www.instagram.com/thedailybanger_/" target="_blank">
-        <i class="fab fa-instagram instagram-logo fa-2x"></i>
+    <div class="item flex-1 ml-auto flex justify-end items-center px-4">
+      <a class="mr-2" href="https://www.instagram.com/thedailybanger_/" target="_blank">
+        <i class="fab fa-instagram instagram-logo fa-2x text-white fill-current"></i>
       </a>
-      <a href="https://twitter.com/thedailybanger2" target="_blank">
-        <i class="fab fa-twitter instagram-logo fa-2x"></i>
+      <a class="ml-2" href="https://twitter.com/thedailybanger2" target="_blank">
+        <i class="fab fa-twitter instagram-logo fa-2x text-white fill-current"></i>
       </a>
     </div>
 
@@ -129,168 +129,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 @import "~/assets/sass/variables.scss";
-.site_footer {
-  width: 100vw;
-  position: fixed;
-  bottom: 0;
-  min-height: 115px;
-  background: $primary-darkest;
-  // display: flex;
-  // justify-content: center;
-  align-items: center;
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 
-  .item {
-    flex: 1;
-    text-align: right;
-    margin-right: 24px;
 
-    .instagram-logo {
-      height: 40px;
-      width: 40px;
-      color: white;
-      margin-right: 15px;
-
-      svg: {
-        fill: white;
-      }
-
-      &:hover {
-        fill: $secondary;
-        color: $secondary;
-      }
-
-      icon-icon {
-        margin-right: 15px;
-      }
-    }
-
-    svg {
-      fill: white !important;
-    }
-  }
-
-  .now-playing {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    margin-left: 24px;
-
-    img {
-      // margin-right: 15px;
-      padding-right: 15px;
-      height: 60px;
-      width: 60px;
-      object-fit: contain;
-    }
-
-    p {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      font-size: 18px;
-      color: white;
-
-      span {
-        color: $secondary;
-      }
-    }
-  }
-
-  .play-bar {
-    padding: 24px;
-    flex: 1;
-    height: 100%;
-    background: $primary-darkest;
-
-    .progress-bar {
-    }
-
-    .duration-controls {
-      text-align: center;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 12px;
-      height: 20px;
-
-      svg {
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-    }
-    p {
-      margin-top: 0;
-      margin-bottom: 0;
-      text-align: center;
-      color: $gray-700;
-    }
-
-    .play-controls {
-      display: flex;
-      flex-direction: row;
-      // justify-content: space-between;
-      align-items: center;
-
-      .actions {
-        flex: 1;
-        text-align: center;
-      }
-
-      svg {
-        cursor: pointer;
-        height: 30px;
-        width: 30px;
-        .primary {
-          fill: white;
-        }
-
-        .secondary {
-          fill: $gray-100;
-        }
-        fill: white;
-      }
-
-      .fast-forward {
-        .secondary {
-          fill: none;
-        }
-      }
-
-      .fast-rewind {
-        .secondary {
-          fill: none;
-        }
-      }
-    }
-  }
-}
-
-icon-icon {
-  fill: white;
-}
-
-@media (max-width: 555px) {
-  .site_footer {
-    flex-direction: column !important;
-  }
-
-  .item {
-    margin-right: 0 !important;
-
-    i {
-        display: none !important;
-    }
-  }
-
-  .now-playing {
-    margin-left: 12px !important;
-  }
-}
 </style>

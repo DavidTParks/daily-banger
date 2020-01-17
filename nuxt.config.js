@@ -83,6 +83,7 @@ module.exports = {
   modules: [
     'nuxt-purgecss',
     '@nuxtjs/sitemap',
+    '@nuxtjs/tailwindcss',
     '@nuxtjs/pwa',
   ],
   apollo: {
