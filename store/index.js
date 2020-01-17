@@ -10,7 +10,9 @@ export const state = () => ({
     currentSongProgress: 0,
     relativeSongProgress: 0,
     seekValue: 0,
-    player: ''
+    player: '',
+
+    navDrawerOpened: false
 })
 
 export const mutations = {
@@ -45,5 +47,8 @@ export const mutations = {
     },
     setPlayer(state, player) {
         state.player = player;
+    },
+    toggleNavDrawer(state) {
+        state.navDrawerOpened = !state.navDrawerOpened;
     }
 }

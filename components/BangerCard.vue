@@ -1,6 +1,6 @@
 <template>
 <div class="grid-item">
-  <div class="banger-card">
+  <div class="banger-card relative cursor-pointer">
     <div class="banger-card__header">
       <picture>
         <source :srcset="`${banger.fields.image.fields.file.url}?w=440&fm=webp`" type="image/webp">
@@ -192,7 +192,7 @@ export default {
 
   &__body {
     padding: 15px;
-    height: 100px;
+    height: 155px;
     padding-bottom: 0;
 
     .title-row {
@@ -231,7 +231,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $gray-light;
+    // background: $gray-light;
 
     a {
       flex-grow: 1;
@@ -240,6 +240,7 @@ export default {
       font-size: 16px;
       text-decoration: none;
       color: $primary-dark;
+      background-color: $gray-900;
       text-align: center;
       transition: all 0.2s;
       display: flex;
