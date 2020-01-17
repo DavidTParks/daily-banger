@@ -104,7 +104,7 @@ export default {
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 60px -1px;
+    box-shadow: 0 15px 35px rgba(50,50,93,0.15),0 5px 15px rgba(0,0,0,0.1) !important;
   }
 
 
@@ -221,6 +221,7 @@ export default {
       margin-bottom: 15px;
       margin-top: 0 !important;
       color: $gray-400;
+      font-weight: 400;
     }
     
   }
