@@ -48,10 +48,10 @@
     </div>
     <div class="item flex-1 ml-auto flex justify-end items-center px-4">
       <a class="mr-2" href="https://www.instagram.com/thedailybanger_/" target="_blank">
-        <i class="fab fa-instagram instagram-logo fa-2x text-white fill-current"></i>
+        <i class="fab fa-instagram instagram-logo fa-2x text-white hover:text-yellow-500 fill-current"></i>
       </a>
       <a class="ml-2" href="https://twitter.com/thedailybanger2" target="_blank">
-        <i class="fab fa-twitter instagram-logo fa-2x text-white fill-current"></i>
+        <i class="fab fa-twitter instagram-logo fa-2x text-white hover:text-yellow-300 fill-current"></i>
       </a>
     </div>
 
