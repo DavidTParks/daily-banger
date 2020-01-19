@@ -14,7 +14,7 @@
                 <source :srcset="`${songImage}?w=668&&fm=webp`" type="image/webp">
                 <img class="article-image" :src="`${songImage}?w=668`" :alt="`Article image for ${songTitle} by ${artist}`">
             </picture>
-            <div class="article-content" v-for="(content, index) in articleContent" :key="index">
+            <div class="article-content mt-8" v-for="(content, index) in articleContent" :key="index">
               <p>{{content.content[0].value}}</p>
             </div>
             <div class="play-song-row">
